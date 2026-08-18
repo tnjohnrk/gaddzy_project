@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Gaddzy Engine - Quote Calculator</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/Gaddzy-Assets/favicon.png">
+    <link rel="shortcut icon" href="../static/images/Gaddzy-Assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../static/images/Gaddzy-Assets/favicon.ico">
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/css/landing/landing.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <style>
+        .main-content {
+            margin-left: 0 !important;
+            padding-bottom: 20px !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+        .step-header-container {
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            margin: 0 0 8px 0;
+        }
+        .back-btn {
+            flex-shrink: 0; 
+            width: 36px; 
+            height: 36px; 
+            border-radius: 50%; 
+            border: 1px solid #e2e8f0; 
+            background: #ffffff; 
+            color: #0f172a; 
+            cursor: pointer; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+        .back-btn:hover { background: #f8fafc; }
+        .step-title {
+            font-weight: 700; 
+            color: #0f172a; 
+            margin: 0; 
+            font-size: clamp(1.1rem, 4vw, 1.4rem);
+            line-height: 1.3;
+        }
+        #variantCard {
+            background: var(--surface);
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            #variantCard {
+                flex-direction: row;
+                align-items: flex-start;
+                padding: 30px;
+                gap: 30px;
+            }
+            #variantImgWrap { flex: 0 0 180px; }
+            #variantImgWrap img { max-height: 220px; }
+            #variantDetails { flex: 1; }
+        }
+        #variantImgWrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #variantImgWrap img { max-height: 160px; width: 100%; object-fit: contain; }
+        #variantGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
+        .variant-pill { word-break: normal; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        #btnNext1 { width: 100%; }
+        @media (min-width: 768px) { #btnNext1 { width: auto; } }
+
+        /* ── Mobile-only: Variant / Specification page compact layout ── */
+        @media (max-width: 768px) {
+            .main-content {
+                padding-top: 0 !important;
+            }
+            #variantGridContainer {
+                padding: 4px 0 !important;
+            }
+            .page-breadcrumb {
+                margin-bottom: 6px !important;
+                font-size: 0.72rem !important;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .page-breadcrumb a {
+                max-width: 80px !important;
+            }
+            .page-breadcrumb .bc-current {
+                max-width: 110px !important;
+            }
+            .step-header-container {
+                gap: 8px !important;
+                margin: 0 0 6px 0 !important;
+            }
+            .back-btn {
+                width: 30px !important;
+                height: 30px !important;
+                font-size: 0.85rem !important;
+            }
+            .step-title {
+                font-size: 1.15rem !important;
+            }
+            #variantCard {
+                padding: 12px !important;
+                gap: 12px !important;
+                border-radius: 12px !important;
+                margin-top: 10px !important;
+            }
+            #variantImgWrap {
+                padding: 4px 0 !important;
+            }
+            #variantImgWrap img {
+                max-height: 90px !important;
+            }
+            #variantDetails h3 {
+                font-size: 1.05rem !important;
+                margin-bottom: 2px !important;
+            }
+            #variantDetails p {
+                font-size: 0.78rem !important;
+                margin-bottom: 8px !important;
+            }
+            #variantDetails div:has(#variantGrid) {
+                padding: 10px !important;
+                border-radius: 10px !important;
+            }
+            #variantDetails div:has(#variantGrid) > p {
+                margin-bottom: 8px !important;
+                font-size: 0.82rem !important;
+            }
+            #variantGrid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 8px !important;
+            }
+            #variantGrid .variant-pill {
+                padding: 8px 10px !important;
+                font-size: 0.8rem !important;
+                border-width: 1px !important;
+                border-radius: 8px !important;
+                gap: 6px !important;
+            }
+            #variantGrid .variant-pill span:first-child {
+                width: 12px !important;
+                height: 12px !important;
+                border-width: 1.5px !important;
+            }
+            #basePriceDisplay {
+                margin-top: 10px !important;
+                padding: 10px 14px !important;
+                border-radius: 10px !important;
+            }
+            #basePriceDisplay #basePriceValue {
+                font-size: 1.3rem !important;
+            }
+            #basePriceDisplay div div:first-child {
+                font-size: 0.7rem !important;
+            }
+            #basePriceDisplay i {
+                font-size: 1.4rem !important;
+            }
+            #btnNext1 {
+                padding: 10px 20px !important;
+                font-size: 0.9rem !important;
+                border-radius: 8px !important;
+            }
+            #btnNext1Wrapper {
+                margin-top: 12px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Clean Premium Page Loader -->
+    <div id="page-loader" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #FFFFFF; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 999999; opacity: 1; transition: opacity 0.3s ease, visibility 0.3s ease; visibility: visible;">
+        <style>
+            .loader-logo {
+                width: 60px;
+                height: 60px;
+                animation: pulseText 1s infinite ease-in-out;
+            }
+            .loader-text {
+                margin-top: 16px;
+                font-family: 'Outfit', 'Poppins', sans-serif;
+                font-size: 0.85rem;
+                font-weight: 700;
+                color: #20042f;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                animation: pulseText 1s infinite ease-in-out;
+            }
+            @keyframes pulseText {
+                0%, 100% { opacity: 0.6; transform: scale(0.98); }
+                50% { opacity: 1; transform: scale(1); }
+            }
+        </style>
+        <img src="../static/images/Gaddzy-Assets/favicon.ico" alt="Gaddzy Loader" class="loader-logo">
+        <div class="loader-text">Loading GADDZY...</div>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+            var loader = document.getElementById('page-loader');
+            if (loader) {
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+                setTimeout(function() {
+                    if (loader && loader.parentNode) {
+                        loader.parentNode.removeChild(loader);
+                    }
+                }, 300);
+            }
+        });
+    </script>
+
+    <!-- Global Header Layout Component -->
+    <script src="../static/js/global-header.js"></script>
+
+    <div class="app-container">
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
+                <!-- Variant Grid -->
+                <div id="variantGridContainer" style="padding: 10px 0;">
+                    <!-- Dynamic Breadcrumb -->
+                    <nav class="page-breadcrumb" id="page-breadcrumb" aria-label="Breadcrumb"></nav>
+                    <script>
+                        (function() {
+                            var params = new URLSearchParams(window.location.search);
+                            var brand = params.get('brand') || 'Brand';
+                            var model = params.get('model') || 'Model';
+                            var bc = document.getElementById('page-breadcrumb');
+                            bc.innerHTML =
+                                '<a href="../index.html">Home</a>' +
+                                '<span class="bc-sep"><i class="fas fa-chevron-right"></i></span>' +
+                                '<a href="brand.html">Select Your Brand</a>' +
+                                '<span class="bc-sep"><i class="fas fa-chevron-right"></i></span>' +
+                                '<a href="model.html?brand=' + encodeURIComponent(brand) + '">' + brand + '</a>' +
+                                '<span class="bc-sep"><i class="fas fa-chevron-right"></i></span>' +
+                                '<span class="bc-current">' + model + '</span>';
+                        })();
+                    </script>
+
+                    <!-- Dynamic page heading with back button -->
+                    <div class="step-header-container">
+                        <button onclick="goBackToModels()" class="back-btn">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <h2 id="dynamicVariantTitle" class="step-title">Sell Old <span id="modelLabel">Phone</span></h2>
+                    </div>
+ 
+                    <!-- Main variant card -->
+                    <div id="variantCard" style="margin-top: 15px;">
+                        <!-- Phone Image -->
+                        <div id="variantImgWrap">
+                            <img id="variantPhoneImg" src="" alt="Phone">
+                        </div>
+                        <!-- Details + Variant Picker -->
+                        <div id="variantDetails">
+                            <h3 id="variantModelName" style="font-weight: 700; font-size: 1.2rem; margin: 0 0 5px 0; color: var(--text-main);"><span id="modelLabel2">Phone</span></h3>
+                            <p style="color: var(--text-muted); font-size: 0.82rem; margin: 0 0 18px 0;">
+                                Select variant to get the best price
+                            </p>
+ 
+                            <div style="border: 1px solid var(--border); border-radius: 12px; padding: 16px; background: var(--surface);">
+                                <p style="font-weight: 600; margin: 0 0 12px 0; font-size: 0.9rem; color: var(--text-main);">Choose a variant</p>
+                                <div id="variantGrid">
+                                    <!-- Dynamically populated -->
+                                </div>
+                            </div>
+ 
+                            <!-- Base price reveal -->
+                            <div id="basePriceDisplay" style="display: none; align-items: center; justify-content: space-between; margin-top: 16px; padding: 14px 18px; background: linear-gradient(135deg, rgba(106,13,173,0.08), rgba(106,13,173,0.04)); border-radius: 12px; border: 1px solid rgba(106,13,173,0.15);">
+                                <div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 3px;">Estimated Base Price</div>
+                                    <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);" id="basePriceValue">₹0</div>
+                                </div>
+                                <i class="fas fa-tags" style="font-size: 1.8rem; color: rgba(106,13,173,0.2);"></i>
+                            </div>
+                        </div>
+                    </div>
+ 
+                    <div id="btnNext1Wrapper" style="margin-top: 20px;">
+                        <button class="btn btn-primary" id="btnNext1" disabled style="padding: 14px 35px; font-size: 1rem;">Get Exact Value <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+ 
+    <!-- Toast Container Placeholder -->
+    <div id="toast-container" class="toast-container"></div>
+ 
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedBrandName = urlParams.get('brand') || 'Apple';
+        const selectedModelName = urlParams.get('model') || 'Phone';
+        let devicesDb = [];
+        let devices = [];
+        let selectedDevice = null;
+ 
+        document.addEventListener('DOMContentLoaded', async () => {
+            const variantGrid = document.getElementById('variantGrid');
+            const baseDisplay = document.getElementById('basePriceDisplay');
+            const basePriceValue = document.getElementById('basePriceValue');
+            const next1 = document.getElementById('btnNext1');
+            
+            // Set dynamic titles
+            document.getElementById('modelLabel').innerText = selectedModelName;
+            document.getElementById('modelLabel2').innerText = selectedModelName;
+ 
+            window.goBackToModels = function() {
+                window.location.href = 'model.html?brand=' + encodeURIComponent(selectedBrandName);
+            };
+ 
+            // Render Variants
+            function renderVariants(variantsToRender) {
+                variantGrid.innerHTML = '';
+                variantsToRender.forEach(v => {
+                    variantGrid.innerHTML += `
+                        <div class="variant-pill" data-variant="${v.variant}" onclick="selectVariant('${v.variant}')" style="
+                            display: flex; align-items: center; gap: 8px;
+                            padding: 12px 14px; border-radius: 10px;
+                            border: 2px solid var(--border); cursor: pointer;
+                            background: var(--surface);
+                            transition: all 0.2s ease; font-weight: 500; font-size: 0.88rem;
+                            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+                        ">
+                            <span style="width: 15px; height: 15px; border-radius: 50%; border: 2px solid var(--border); display: inline-block; flex-shrink: 0;"></span>
+                            <span style="overflow: hidden; text-overflow: ellipsis;">${v.variant}</span>
+                        </div>
+                    `;
+                });
+            }
+ 
+            window.selectVariant = function(variant) {
+                document.querySelectorAll('#variantGrid .variant-pill').forEach(el => {
+                    const isActive = el.dataset.variant === variant;
+                    el.style.borderColor = isActive ? 'var(--primary)' : 'var(--border)';
+                    el.style.background = isActive ? 'rgba(106,13,173,0.06)' : 'var(--surface)';
+                    el.style.color = isActive ? 'var(--primary)' : 'inherit';
+                    const dot = el.querySelector('span');
+                    dot.style.borderColor = isActive ? 'var(--primary)' : 'var(--border)';
+                    dot.style.background = isActive ? 'var(--primary)' : 'transparent';
+                });
+ 
+                selectedDevice = devices.find(d => d.variant === variant);
+                baseDisplay.style.display = 'flex';
+                animateValue(basePriceValue, 0, selectedDevice.base_price, 750);
+                next1.removeAttribute('disabled');
+            };
+ 
+            next1.addEventListener('click', () => {
+                if (selectedDevice) {
+                    window.location.href = 'price.html?brand=' + encodeURIComponent(selectedBrandName) + '&model=' + encodeURIComponent(selectedModelName) + '&variant=' + encodeURIComponent(selectedDevice.variant);
+                }
+            });
+ 
+            // Fetch devices and load variant details
+            try {
+                const res = await fetch('../data/devices_db.json');
+                const allDevices = await res.json();
+                devices = allDevices.filter(d => d.brand.toLowerCase() === selectedBrandName.toLowerCase() && d.model.toLowerCase() === selectedModelName.toLowerCase());
+                
+                // Populate Image
+                const brandDir = selectedBrandName.charAt(0).toUpperCase() + selectedBrandName.slice(1).toLowerCase();
+                const formattedModel = selectedModelName.toLowerCase().replace(/\s+/g, '-');
+                const imgSrc = `../static/images/All-Brand-Mobile-Image/${brandDir}/${formattedModel}.png`;
+                const fallbackSrc = `../static/images/Brand-Logo/${brandDir}.avif`;
+                
+                const imgEl = document.getElementById('variantPhoneImg');
+                imgEl.src = imgSrc;
+                imgEl.onerror = function() { this.onerror = null; this.src = fallbackSrc; };
+ 
+                renderVariants(devices);
+            } catch (e) {
+                console.error('Failed to load variants:', e);
+            }
+        });
+
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = Math.floor(progress * (end - start) + start);
+                element.innerText = '₹' + current.toLocaleString('en-IN');
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    element.innerText = '₹' + end.toLocaleString('en-IN');
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+    </script>
+    <!-- Global Footer Layout Component -->
+    <script src="../static/js/global-footer.js"></script>
+</body>
+</html>

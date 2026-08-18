@@ -1,0 +1,1885 @@
+{
+  "Apple": {
+    "Tier1": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 12,
+        "6-11_months": 18,
+        "11+_months": 25
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 35,
+        "faulty": 45,
+        "dead": 65,
+        "changed": 45
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 30,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 25,
+        "biometric": 35,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 70,
+      "floor_price": 1500
+    },
+    "Tier2": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 15,
+        "6-11_months": 20,
+        "11+_months": 30
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 25,
+        "faulty": 35,
+        "dead": 50,
+        "changed": 45
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 30,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 30,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 60,
+      "floor_price": 500
+    },
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 45
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 30,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 30,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    }
+  },
+  "Xiaomi": {
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    },
+    "Tier2": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 15,
+        "6-11_months": 20,
+        "11+_months": 30
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 25,
+        "faulty": 35,
+        "dead": 50,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 60,
+      "floor_price": 500
+    },
+    "Tier1": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 12,
+        "6-11_months": 18,
+        "11+_months": 25
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 35,
+        "faulty": 45,
+        "dead": 65,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 25,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 70,
+      "floor_price": 1500
+    }
+  },
+  "Samsung": {
+    "Tier1": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 12,
+        "6-11_months": 18,
+        "11+_months": 25
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 40,
+        "faulty": 45,
+        "dead": 70,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 25,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 70,
+      "floor_price": 1500
+    },
+    "Tier2": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 15,
+        "6-11_months": 20,
+        "11+_months": 30
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 25,
+        "faulty": 35,
+        "dead": 50,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 60,
+      "floor_price": 500
+    },
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    }
+  },
+  "Oneplus": {
+    "Tier1": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 12,
+        "6-11_months": 18,
+        "11+_months": 25
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 35,
+        "faulty": 45,
+        "dead": 65,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 25,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 70,
+      "floor_price": 1500
+    },
+    "Tier2": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 15,
+        "6-11_months": 20,
+        "11+_months": 30
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 25,
+        "faulty": 35,
+        "dead": 50,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 60,
+      "floor_price": 500
+    },
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    }
+  },
+  "Nokia": {
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    }
+  },
+  "Poco": {
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    },
+    "Tier2": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 15,
+        "6-11_months": 20,
+        "11+_months": 30
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 25,
+        "faulty": 35,
+        "dead": 50,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 60,
+      "floor_price": 500
+    }
+  },
+  "Vivo": {
+    "Tier1": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 12,
+        "6-11_months": 18,
+        "11+_months": 25
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 35,
+        "faulty": 45,
+        "dead": 65,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 25,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 70,
+      "floor_price": 1500
+    },
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    },
+    "Tier2": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 15,
+        "6-11_months": 20,
+        "11+_months": 30
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 25,
+        "faulty": 35,
+        "dead": 50,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 60,
+      "floor_price": 500
+    }
+  },
+  "Google": {
+    "Tier1": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 12,
+        "6-11_months": 18,
+        "11+_months": 25
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 35,
+        "faulty": 45,
+        "dead": 65,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 25,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 70,
+      "floor_price": 1500
+    },
+    "Tier2": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 15,
+        "6-11_months": 20,
+        "11+_months": 30
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 25,
+        "faulty": 35,
+        "dead": 50,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 60,
+      "floor_price": 500
+    },
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    }
+  },
+  "LG": {
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    }
+  },
+  "Infinix": {
+    "Tier2": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 15,
+        "6-11_months": 20,
+        "11+_months": 30
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 25,
+        "faulty": 35,
+        "dead": 50,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 60,
+      "floor_price": 500
+    },
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    }
+  },
+  "Tecno": {
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    },
+    "Tier2": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 15,
+        "6-11_months": 20,
+        "11+_months": 30
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 25,
+        "faulty": 35,
+        "dead": 50,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 60,
+      "floor_price": 500
+    }
+  },
+  "iQOO": {
+    "Tier2": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 15,
+        "6-11_months": 20,
+        "11+_months": 30
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 25,
+        "faulty": 35,
+        "dead": 50,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 60,
+      "floor_price": 500
+    },
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    }
+  },
+  "OPPO": {
+    "Tier2": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 15,
+        "6-11_months": 20,
+        "11+_months": 30
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 25,
+        "faulty": 35,
+        "dead": 50,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 60,
+      "floor_price": 500
+    },
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    }
+  },
+  "Realme": {
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    },
+    "Tier2": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 15,
+        "6-11_months": 20,
+        "11+_months": 30
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 25,
+        "faulty": 35,
+        "dead": 50,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 60,
+      "floor_price": 500
+    }
+  },
+  "Motorola": {
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    },
+    "Tier2": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 15,
+        "6-11_months": 20,
+        "11+_months": 30
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 25,
+        "faulty": 35,
+        "dead": 50,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 60,
+      "floor_price": 500
+    },
+    "Tier1": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 12,
+        "6-11_months": 18,
+        "11+_months": 25
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 35,
+        "faulty": 45,
+        "dead": 65,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 25,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 70,
+      "floor_price": 1500
+    }
+  },
+  "Lenovo": {
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    }
+  },
+  "Honor": {
+    "Tier2": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 15,
+        "6-11_months": 20,
+        "11+_months": 30
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 25,
+        "faulty": 35,
+        "dead": 50,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 60,
+      "floor_price": 500
+    },
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    }
+  },
+  "Asus": {
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    }
+  },
+  "Nothing": {
+    "Tier2": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 15,
+        "6-11_months": 20,
+        "11+_months": 30
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 25,
+        "faulty": 35,
+        "dead": 50,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 500,
+        "charger": 1000,
+        "bill": 500
+      },
+      "max_hardware_cap": 60,
+      "floor_price": 500
+    },
+    "Tier3": {
+      "age": {
+        "0-3_months": 0,
+        "3-6_months": 18,
+        "6-11_months": 25,
+        "11+_months": 35
+      },
+      "display": {
+        "none": 0,
+        "minor_scratches": 5,
+        "major_scratches": 10,
+        "cracked": 20,
+        "faulty": 30,
+        "dead": 45,
+        "changed": 30
+      },
+      "physical": {
+        "flawless": 0,
+        "minor_wear": 10,
+        "dents": 20,
+        "broken_back": 20,
+        "bent": 35
+      },
+      "hardware": {
+        "front_camera": 15,
+        "rear_camera": 20,
+        "biometric": 15,
+        "battery": 15,
+        "charging_port": 10,
+        "speaker_mic": 10,
+        "buttons": 10,
+        "connectivity": 10,
+        "network_sim": 20,
+        "sensors": 10,
+        "vibration": 5,
+        "restart": 25
+      },
+      "accessories": {
+        "box": 200,
+        "charger": 500,
+        "bill": 200
+      },
+      "max_hardware_cap": 85,
+      "floor_price": 500
+    }
+  }
+}

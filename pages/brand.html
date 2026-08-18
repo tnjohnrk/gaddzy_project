@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Gaddzy Engine - Quote Calculator</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/Gaddzy-Assets/favicon.png">
+    <link rel="shortcut icon" href="../static/images/Gaddzy-Assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../static/images/Gaddzy-Assets/favicon.ico">
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/css/landing/landing.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <style>
+        /* Scoped layout fixes for Brand Page */
+        body {
+            display: flex !important;
+            flex-direction: column !important;
+            min-height: 100vh !important;
+            width: 100% !important;
+            background-color: var(--surface, #FFFFFF) !important;
+        }
+
+        .app-container {
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            flex: 1 0 auto !important;
+        }
+
+        .main-content {
+            margin-left: 0 !important;
+            padding-bottom: 40px !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        /* ── Desktop & Tablet (min-width: 769px) ── */
+        @media (min-width: 769px) {
+            .brand-page-inner {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 36px 24px 60px;
+            }
+
+            .brand-step-heading {
+                text-align: left;
+                margin-bottom: 28px;
+                margin-top: 0;
+            }
+
+            .page-breadcrumb {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 0.85rem;
+                font-weight: 500;
+                color: var(--text-muted, #4B5563);
+                margin-bottom: 16px;
+            }
+
+            .page-breadcrumb a {
+                color: var(--primary, #6a0dad);
+                font-weight: 600;
+            }
+
+            .page-breadcrumb a:hover {
+                text-decoration: underline;
+            }
+
+            .page-breadcrumb .bc-sep {
+                font-size: 0.7rem;
+                color: #94A3B8;
+            }
+
+            .brand-step-heading h2 {
+                font-family: 'Outfit', 'Poppins', sans-serif;
+                font-size: 2.2rem;
+                font-weight: 800;
+                color: var(--text-main, #111827);
+                margin-bottom: 8px;
+                letter-spacing: -0.02em;
+            }
+
+            .brand-step-heading p {
+                font-size: 1rem;
+                color: var(--text-muted, #4B5563);
+                line-height: 1.5;
+            }
+
+            .search-bar#brandSearchBar {
+                position: relative;
+                width: 100%;
+                margin-bottom: 28px;
+            }
+
+            .search-bar#brandSearchBar i {
+                position: absolute;
+                left: 18px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: var(--primary, #6a0dad);
+                font-size: 1.05rem;
+                pointer-events: none;
+            }
+
+            .search-bar#brandSearchBar input {
+                width: 100%;
+                padding: 14px 18px 14px 48px;
+                font-size: 1rem;
+                font-weight: 500;
+                border: 1.5px solid var(--border, #E5E8EB);
+                border-radius: 14px;
+                outline: none;
+                background: #FFFFFF;
+                transition: all 0.3s ease;
+            }
+
+            .search-bar#brandSearchBar input:focus {
+                border-color: var(--primary, #6a0dad);
+                box-shadow: 0 0 0 4px rgba(106, 13, 173, 0.1);
+            }
+
+            /* Desktop Brand Grid: Exactly 3 cards per row */
+            #brandGrid {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 24px !important;
+                margin-top: 0 !important;
+                width: 100% !important;
+            }
+
+            #brandSkeleton > div:last-child {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 24px !important;
+            }
+
+            #brandGrid .selectable-card {
+                background: #FFFFFF !important;
+                border: 1.5px solid var(--border, #E5E8EB) !important;
+                border-radius: 16px !important;
+                padding: 24px 16px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                cursor: pointer !important;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
+            }
+
+            #brandGrid .selectable-card:hover {
+                border-color: var(--primary, #6a0dad) !important;
+                transform: translateY(-4px) !important;
+                box-shadow: 0 12px 24px rgba(106, 13, 173, 0.1) !important;
+            }
+
+            #brandGrid .selectable-card img {
+                height: 80px !important;
+                max-height: 80px !important;
+                width: 100% !important;
+                object-fit: contain !important;
+                margin-bottom: 14px !important;
+                transition: transform 0.3s ease !important;
+            }
+
+            #brandGrid .selectable-card:hover img {
+                transform: scale(1.05) !important;
+            }
+
+            #brandGrid .selectable-card div {
+                font-weight: 600 !important;
+                font-size: 0.95rem !important;
+                color: var(--text-main, #111827) !important;
+                text-align: center !important;
+            }
+        }
+
+        /* ── Mobile-only: Brand page compact layout ── */
+        @media (max-width: 768px) {
+
+            /* Fix: landing.css sets body { padding-top: 72px } for the global header.
+               style.css adds another padding-top: 80px on .main-content for its own
+               mobile header — resulting in double gap. Remove the duplicate here. */
+            .main-content {
+                padding-top: 0 !important;
+            }
+
+            /* Heading section: tight spacing */
+            .brand-step-heading {
+                margin-top: 6px !important;
+                margin-bottom: 12px !important;
+            }
+
+            /* Hide the descriptive subtext below the heading */
+            .brand-step-heading > p {
+                display: none !important;
+            }
+
+            /* Breadcrumb: smaller and tighter */
+            .page-breadcrumb {
+                margin-bottom: 6px !important;
+                font-size: 0.72rem !important;
+            }
+
+            /* Heading: slightly smaller on mobile */
+            .brand-step-heading h2 {
+                font-size: 1.15rem !important;
+                margin-bottom: 0 !important;
+            }
+
+            /* Search bar: tight spacing, full-width */
+            #brandSearchBar {
+                margin-bottom: 12px !important;
+                max-width: 100% !important;
+            }
+
+            #brandSearchBar input {
+                padding: 10px 14px 10px 38px !important;
+                font-size: 0.88rem !important;
+                border-radius: 10px !important;
+            }
+
+            /* Brand skeleton: 3-column to match actual grid */
+            #brandSkeleton > div:last-child {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 8px !important;
+            }
+
+            /* Brand grid: exactly 3 columns, compact gap */
+            #brandGrid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 8px !important;
+                margin-top: 0 !important;
+            }
+
+            /* Brand cards: compact padding */
+            #brandGrid .selectable-card {
+                padding: 10px 6px 8px !important;
+                border-radius: 10px !important;
+            }
+
+            /* Brand logos: smaller, contained */
+            #brandGrid .selectable-card img {
+                height: 55px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                object-fit: contain !important;
+                margin-bottom: 6px !important;
+            }
+
+            /* Brand name label: smaller text */
+            #brandGrid .selectable-card div {
+                font-size: 0.72rem !important;
+                font-weight: 600 !important;
+                color: var(--text-muted) !important;
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Clean Premium Page Loader -->
+    <div id="page-loader" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #FFFFFF; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 999999; opacity: 1; transition: opacity 0.3s ease, visibility 0.3s ease; visibility: visible;">
+        <style>
+            .loader-logo {
+                width: 60px;
+                height: 60px;
+                animation: pulseText 1s infinite ease-in-out;
+            }
+            .loader-text {
+                margin-top: 16px;
+                font-family: 'Outfit', 'Poppins', sans-serif;
+                font-size: 0.85rem;
+                font-weight: 700;
+                color: #20042f;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                animation: pulseText 1s infinite ease-in-out;
+            }
+            @keyframes pulseText {
+                0%, 100% { opacity: 0.6; transform: scale(0.98); }
+                50% { opacity: 1; transform: scale(1); }
+            }
+        </style>
+        <img src="../static/images/Gaddzy-Assets/favicon.ico" alt="Gaddzy Loader" class="loader-logo">
+        <div class="loader-text">Loading GADDZY...</div>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+            var loader = document.getElementById('page-loader');
+            if (loader) {
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+                setTimeout(function() {
+                    if (loader && loader.parentNode) {
+                        loader.parentNode.removeChild(loader);
+                    }
+                }, 300);
+            }
+        });
+    </script>
+
+    <!-- Global Header Layout Component -->
+    <script src="../static/js/global-header.js"></script>
+
+    <div class="app-container">
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="brand-page-inner">
+                <!-- Step 1: Device Selection (Brand only) -->
+                <div id="step1" class="calculator-step">
+                    <!-- Brand Grid -->
+                    <div id="brandGridContainer">
+                        <div class="brand-step-heading">
+                            <!-- Breadcrumb -->
+                            <nav class="page-breadcrumb" id="page-breadcrumb" aria-label="Breadcrumb">
+                                <a href="../index.html">Home</a>
+                                <span class="bc-sep"><i class="fas fa-chevron-right"></i></span>
+                                <span class="bc-current">Select Your Brand</span>
+                            </nav>
+                            <h2>Sell Old Mobile Phone</h2>
+                            <p>Choose your brand to get the best price with free pickup &amp; instant payment.</p>
+                        </div>
+ 
+                        <!-- Skeleton loader shown while fetching -->
+                        <div id="brandSkeleton">
+                            <div style="height: 48px; border-radius: 12px; background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; margin-bottom: 25px;"></div>
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                                <div class="skeleton-card"></div>
+                                <div class="skeleton-card"></div>
+                                <div class="skeleton-card"></div>
+                                <div class="skeleton-card"></div>
+                                <div class="skeleton-card"></div>
+                                <div class="skeleton-card"></div>
+                            </div>
+                        </div>
+ 
+                        <div class="search-bar" id="brandSearchBar" style="display: none;">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="brandSearch" class="form-control" placeholder="Search your brand to sell...">
+                        </div>
+ 
+                        <div class="selectable-grid" id="brandGrid" style="opacity: 0; transition: opacity 0.35s ease;">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+ 
+    <!-- Toast Container Placeholder -->
+    <div id="toast-container" class="toast-container"></div>
+ 
+    <script>
+        let devicesDb = [];
+        let availableBrands = [];
+ 
+        document.addEventListener('DOMContentLoaded', async () => {
+            const brandGrid = document.getElementById('brandGrid');
+            const brandSearch = document.getElementById('brandSearch');
+            const brandSkeleton = document.getElementById('brandSkeleton');
+            const brandSearchBar = document.getElementById('brandSearchBar');
+ 
+            // Render Brands
+            function renderBrands(brandsToRender) {
+                brandGrid.innerHTML = '';
+                if (brandsToRender.length === 0) {
+                    brandGrid.innerHTML = `<div style="grid-column: 1/-1; color: var(--text-muted); text-align: center; padding: 20px;">No brands found.</div>`;
+                    return;
+                }
+                brandsToRender.forEach(b => {
+                    const fileName = b.charAt(0).toUpperCase() + b.slice(1).toLowerCase() + '.avif';
+                    const imgSrc = `../static/images/Brand-Logo/${fileName}`;
+                    
+                    brandGrid.innerHTML += `
+                        <div class="selectable-card" onclick="selectBrand('${b}')">
+                            <img src="${imgSrc}" alt="${b}">
+                            <div>${b}</div>
+                        </div>
+                    `;
+                });
+            }
+ 
+            if (brandSearch) {
+                brandSearch.addEventListener('input', (e) => {
+                    const term = e.target.value.toLowerCase();
+                    const filtered = availableBrands.filter(b => b.toLowerCase().includes(term));
+                    renderBrands(filtered);
+                });
+            }
+ 
+            window.selectBrand = function(brand) {
+                window.location.href = 'model.html?brand=' + encodeURIComponent(brand);
+            };
+ 
+            // Fetch devices DB to build the brands
+            try {
+                const res = await fetch('../data/devices_db.json');
+                devicesDb = await res.json();
+                availableBrands = [...new Set(devicesDb.map(d => d.brand))].sort();
+                renderBrands(availableBrands);
+ 
+                // Hide skeleton, reveal grid with fade-in
+                brandSkeleton.style.display = 'none';
+                brandSearchBar.style.display = 'flex';
+                brandGrid.style.opacity = '1';
+ 
+            } catch (e) {
+                console.error('Failed to load devices:', e);
+                brandSkeleton.innerHTML = `
+                    <div style="text-align: center; padding: 40px 20px; color: var(--text-muted);">
+                        <i class="fas fa-exclamation-circle" style="font-size: 2.5rem; color: var(--danger); margin-bottom: 12px; display: block;"></i>
+                        <p style="font-weight: 600; font-size: 1rem; margin-bottom: 6px; color: var(--text-main);">Failed to load devices</p>
+                        <p style="font-size: 0.85rem;">Please check your connection and <a href="../index.html" style="color: var(--primary); text-decoration: underline;">try again</a>.</p>
+                    </div>`;
+            }
+        });
+    </script>
+    <!-- Global Footer Layout Component -->
+    <script src="../static/js/global-footer.js"></script>
+</body>
+</html>

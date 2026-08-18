@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GADDZY - Sell Old Mobile Phone & Gadgets for Instant Cash</title>
+    <meta name="description"
+        content="Sell your old mobile phones, laptops, smartwatches, and tablets online at GADDZY for the highest price with free doorstep pickup and instant payment.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="static/images/Gaddzy-Assets/favicon.ico">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="static/css/landing/landing.css">
+</head>
+
+<body>
+    <!-- Clean Premium Page Loader -->
+    <div id="page-loader"
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #FFFFFF; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 999999; opacity: 1; transition: opacity 0.3s ease, visibility 0.3s ease; visibility: visible;">
+        <style>
+            .loader-logo {
+                width: 60px;
+                height: 60px;
+                animation: pulseText 1s infinite ease-in-out;
+            }
+
+            .loader-text {
+                margin-top: 16px;
+                font-family: 'Outfit', 'Poppins', sans-serif;
+                font-size: 0.85rem;
+                font-weight: 700;
+                color: #20042f;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                animation: pulseText 1s infinite ease-in-out;
+            }
+
+            @keyframes pulseText {
+
+                0%,
+                100% {
+                    opacity: 0.6;
+                    transform: scale(0.98);
+                }
+
+                50% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        </style>
+        <img src="static/images/Gaddzy-Assets/favicon.ico" alt="Gaddzy Loader" class="loader-logo">
+        <div class="loader-text">Loading GADDZY...</div>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            var loader = document.getElementById('page-loader');
+            if (loader) {
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+                setTimeout(function () {
+                    if (loader && loader.parentNode) {
+                        loader.parentNode.removeChild(loader);
+                    }
+                }, 300);
+            }
+        });
+    </script>
+
+
+    <!-- Global Header Layout Component -->
+    <script src="static/js/global-header.js"></script>
+
+    <!-- ==========================================================================
+         3. HERO SECTION (Two-Column: Left Content | Right Bento Device Cards)
+         ========================================================================== -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-grid">
+
+                <!-- ── Hero Left Side ── -->
+                <div class="hero-left">
+
+
+                    <!-- Mobile/Tablet search bar (hidden on desktop) -->
+                    <div class="search-container mobile-hero-search">
+                        <div class="search-wrapper">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                            <input type="text" class="search-input mobile-search-input" id="mobile-global-search-input"
+                                placeholder="Search brand or model (e.g. iPhone 15, Galaxy S24)..." autocomplete="off">
+                        </div>
+
+                        <!-- Auto Search Live Dropdown -->
+                        <div class="search-dropdown" id="mobile-search-dropdown-results">
+                            <div class="search-item" onclick="openValuationModal('Apple iPhone 15 Pro Max', 88500)">
+                                <div class="search-item-info">
+                                    <i class="fa-solid fa-mobile-button"></i>
+                                    <span>Apple iPhone 15 Pro Max</span>
+                                </div>
+                                <span class="search-item-price">Up to ₹88,500</span>
+                            </div>
+                            <div class="search-item" onclick="openValuationModal('Samsung Galaxy S24 Ultra', 79000)">
+                                <div class="search-item-info">
+                                    <i class="fa-solid fa-mobile-button"></i>
+                                    <span>Samsung Galaxy S24 Ultra</span>
+                                </div>
+                                <span class="search-item-price">Up to ₹79,000</span>
+                            </div>
+                            <div class="search-item" onclick="openValuationModal('OnePlus 12 5G', 44000)">
+                                <div class="search-item-info">
+                                    <i class="fa-solid fa-mobile-button"></i>
+                                    <span>OnePlus 12 5G</span>
+                                </div>
+                                <span class="search-item-price">Up to ₹44,000</span>
+                            </div>
+                            <div class="search-item" onclick="openValuationModal('Xiaomi 14 Pro', 38000)">
+                                <div class="search-item-info">
+                                    <i class="fa-solid fa-mobile-button"></i>
+                                    <span>Xiaomi 14 Pro</span>
+                                </div>
+                                <span class="search-item-price">Up to ₹38,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h1 class="hero-page-title">
+                        Sell Old Mobile Phone for <span>Instant Cash</span>
+                    </h1>
+
+                    <p class="hero-desc-text" style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">
+                        Get guaranteed highest valuation, free doorstep pickup within 2 hours, and instant 100% upfront
+                        payment.
+                    </p>
+
+                    <!-- ── Hero Brand Search Field ── -->
+                    <div class="hero-brand-search-wrapper" id="hero-brand-search-wrapper">
+                        <div class="hero-brand-search-field" id="hero-brand-search-field">
+                            <i class="fa-solid fa-magnifying-glass hero-brand-search-icon"></i>
+                            <input type="text" class="hero-brand-search-input" id="hero-brand-search-input"
+                                placeholder="Select your brand" autocomplete="off"
+                                aria-label="Search or select your mobile brand">
+                            <i class="fa-solid fa-chevron-down hero-brand-search-chevron" id="hero-brand-chevron"></i>
+                        </div>
+                        <!-- Brand Dropdown -->
+                        <div class="hero-brand-dropdown" id="hero-brand-dropdown" role="listbox"
+                            aria-label="Brand suggestions">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── Hero Right Side: Bento Device Cards ── -->
+                <div class="hero-bento">
+
+                    <!-- Top Row: Mobile + Tablet -->
+                    <div class="hero-bento-row">
+
+                        <!-- Card 1: Mobile Phones -->
+                        <a href="pages/brand.html" class="hbc hbc--mobile" aria-label="Sell Mobile Phones">
+                            <!-- Clip layer: contains bg-reveal + device image, clipped to card -->
+                            <div class="hbc-clip">
+                                <!-- Premium SVG wave backdrop -->
+                                <svg class="hbc-wave-svg" viewBox="0 0 320 240" preserveAspectRatio="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <defs>
+                                        <linearGradient id="waveGrad-m" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#F3E8FF" stop-opacity="0.9" />
+                                            <stop offset="50%" stop-color="#7E22CE" stop-opacity="0.95" />
+                                            <stop offset="100%" stop-color="#20042f" stop-opacity="1" />
+                                        </linearGradient>
+                                        <radialGradient id="waveHighlight-m" cx="28%" cy="28%" r="55%">
+                                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.13" />
+                                            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                                        </radialGradient>
+                                    </defs>
+                                    <!-- Organic flowing wave — covers full right half, locks top-right & bottom-right corners -->
+                                    <path
+                                        d="M320,240 L320,0 C278,0 230,14 190,42 C148,72 120,114 98,155 C76,196 55,222 22,238 C12,240 0,240 0,240 Z"
+                                        fill="url(#waveGrad-m)" />
+                                    <path
+                                        d="M320,240 L320,0 C278,0 230,14 190,42 C148,72 120,114 98,155 C76,196 55,222 22,238 C12,240 0,240 0,240 Z"
+                                        fill="url(#waveHighlight-m)" />
+                                </svg>
+                                <!-- Device image: animates in on hover -->
+                                <img src="static/images/All-Brand-Mobile-Image/Apple/apple-iphone-16-pro.png"
+                                    alt="iPhone 16 Pro" class="hbc-reveal-img" draggable="false" loading="eager">
+                            </div>
+                            <!-- Label stays outside clip so it's always visible -->
+                            <div class="hbc-label">
+                                <span class="hbc-title">MOBILE<br>PHONES</span>
+                                <i class="fa-solid fa-arrow-right hbc-arrow"></i>
+                            </div>
+                        </a>
+
+                        <!-- Card 2: Tablets -->
+                        <a href="#" class="hbc hbc--tablet" aria-label="Sell Tablets">
+                            <div class="hbc-clip">
+                                <!-- Premium SVG wave backdrop -->
+                                <svg class="hbc-wave-svg" viewBox="0 0 320 240" preserveAspectRatio="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <defs>
+                                        <linearGradient id="waveGrad-t" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#F3E8FF" stop-opacity="0.9" />
+                                            <stop offset="50%" stop-color="#7E22CE" stop-opacity="0.95" />
+                                            <stop offset="100%" stop-color="#20042f" stop-opacity="1" />
+                                        </linearGradient>
+                                        <radialGradient id="waveHighlight-t" cx="28%" cy="28%" r="55%">
+                                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.13" />
+                                            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                                        </radialGradient>
+                                    </defs>
+                                    <path
+                                        d="M320,240 L320,0 C278,0 230,14 190,42 C148,72 120,114 98,155 C76,196 55,222 22,238 C12,240 0,240 0,240 Z"
+                                        fill="url(#waveGrad-t)" />
+                                    <path
+                                        d="M320,240 L320,0 C278,0 230,14 190,42 C148,72 120,114 98,155 C76,196 55,222 22,238 C12,240 0,240 0,240 Z"
+                                        fill="url(#waveHighlight-t)" />
+                                </svg>
+                                <img src="static/images/All-Brand-Mobile-Image/tablet/tablet.png" alt="Tablet"
+                                    class="hbc-reveal-img" draggable="false" loading="eager">
+                            </div>
+                            <div class="hbc-label">
+                                <span class="hbc-title">TABLETS</span>
+                                <i class="fa-solid fa-arrow-right hbc-arrow"></i>
+                            </div>
+                        </a>
+
+                    </div><!-- /top-row -->
+
+                    <!-- Bottom Row: Smart Watch (wide) -->
+                    <a href="#" class="hbc hbc--watch" aria-label="Sell Smart Watches">
+                        <div class="hbc-clip">
+                            <!-- Premium SVG wave backdrop (wider aspect for watch card) -->
+                            <svg class="hbc-wave-svg" viewBox="0 0 520 160" preserveAspectRatio="none"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="waveGrad-w" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#F3E8FF" stop-opacity="0.9" />
+                                        <stop offset="50%" stop-color="#7E22CE" stop-opacity="0.95" />
+                                        <stop offset="100%" stop-color="#20042f" stop-opacity="1" />
+                                    </linearGradient>
+                                    <radialGradient id="waveHighlight-w" cx="25%" cy="30%" r="50%">
+                                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.13" />
+                                        <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                                    </radialGradient>
+                                </defs>
+                                <!-- Organic flowing wave — right edge locked, sweeps left organically, no white gaps -->
+                                <path
+                                    d="M520,160 L520,0 C478,0 432,6 384,20 C328,38 272,65 220,93 C168,120 116,142 62,155 C38,159 18,160 0,160 Z"
+                                    fill="url(#waveGrad-w)" />
+                                <path
+                                    d="M520,160 L520,0 C478,0 432,6 384,20 C328,38 272,65 220,93 C168,120 116,142 62,155 C38,159 18,160 0,160 Z"
+                                    fill="url(#waveHighlight-w)" />
+                            </svg>
+                            <img src="static/images/All-Brand-Mobile-Image/watch/watch2.png" alt="Smart Watch"
+                                class="hbc-reveal-img" draggable="false" loading="eager">
+                        </div>
+                        <div class="hbc-label">
+                            <span class="hbc-title">SMART<br>WATCHES</span>
+                            <i class="fa-solid fa-arrow-right hbc-arrow"></i>
+                        </div>
+                    </a>
+
+                </div><!-- /hero-bento -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. TESTIMONIALS SECTION
+         ========================================================================== -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header left-aligned" style="margin-bottom: 30px;">
+                <h2 class="section-title">Customer <span class="highlight">Reviews</span></h2>
+            </div>
+
+            <!-- Desktop Horizontal Cards Layout / Mobile vertical/horizontal swipe deck -->
+            <div class="testimonials-slider-container">
+                <div class="testimonials-track" id="testimonials-track">
+
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card" data-index="0">
+                        <div class="testimonial-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Sold my old iPhone 14 Pro in less than 2 hours. The pickup
+                            executive came directly to my office, verified the phone condition, and transferred the cash
+                            instantly. GADDZY is amazing!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">R</div>
+                            <div class="author-info">
+                                <h4 class="author-name">Rahul Sharma</h4>
+                                <span class="author-meta">Verified Customer • Mumbai</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card" data-index="1">
+                        <div class="testimonial-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Got the highest price quote for my Samsung S22 Ultra. No hidden
+                            deductions, no bargain hassles. Very professional service and completely transparent
+                            valuation process."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">P</div>
+                            <div class="author-info">
+                                <h4 class="author-name">Priya Patel</h4>
+                                <span class="author-meta">Verified Customer • Delhi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card" data-index="2">
+                        <div class="testimonial-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"I was skeptical about selling online, but GADDZY's upfront UPI
+                            payment before pickup agent left my door won me over. Fully recommended if you want
+                            hassle-free selling!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">A</div>
+                            <div class="author-info">
+                                <h4 class="author-name">Anish Sen</h4>
+                                <span class="author-meta">Verified Customer • Kolkata</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Mobile Navigation indicators/dots (hidden on desktop) -->
+                <div class="testimonials-dots" id="testimonials-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         BRAND MARQUEE
+         ========================================================================== -->
+    <div class="container" style="text-align: center; margin-top: 24px; margin-bottom: 0px;">
+        <h2
+            style="font-family: 'Outfit', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--text-dark); margin: 0; text-transform: none;">
+            Top Selling <span class="highlight"
+                style="background: linear-gradient(135deg, #6A0DAD, #9C4DFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Models</span>
+        </h2>
+    </div>
+
+    <section class="brand-marquee-section">
+        <div class="brand-marquee-container">
+            <div class="brand-marquee-track">
+
+                <!-- Track A -->
+                <div class="brand-marquee-content">
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Apple.avif" alt="Apple"
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Samsung.avif" alt="Samsung"
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Oneplus.avif" alt="OnePlus"
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Xiaomi.avif" alt="Xiaomi"
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Vivo.avif" alt="Vivo"
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Oppo.avif" alt="Oppo"
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Realme.avif" alt="Realme"
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Motorola.avif" alt="Motorola"
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Nothing.avif" alt="Nothing"
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Google.avif" alt="Google"
+                            class="marquee-brand"></div>
+                </div>
+
+                <!-- Track B — identical duplicate for seamless loop -->
+                <div class="brand-marquee-content" aria-hidden="true">
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Apple.avif" alt=""
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Samsung.avif" alt=""
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Oneplus.avif" alt=""
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Xiaomi.avif" alt=""
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Vivo.avif" alt=""
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Oppo.avif" alt=""
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Realme.avif" alt=""
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Motorola.avif" alt=""
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Nothing.avif" alt=""
+                            class="marquee-brand"></div>
+                    <div class="marquee-item"><img src="static/images/Brand-Logo/Google.avif" alt=""
+                            class="marquee-brand"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. HOW GADDZY WORKS — Automatic Step-by-Step Roadmap
+         ========================================================================== -->
+    <div class="roadmap-scroll-wrapper" id="roadmap-wrapper">
+        <!-- Sticky viewport that pins while user scrolls through the story -->
+        <div class="roadmap-sticky" id="roadmap-sticky">
+
+            <!-- Ambient glow particles (CSS-driven) -->
+            <div class="roadmap-ambient">
+                <span class="ambient-orb orb-1"></span>
+                <span class="ambient-orb orb-2"></span>
+                <span class="ambient-orb orb-3"></span>
+            </div>
+
+            <!-- Section header (fades in once) -->
+            <div class="roadmap-header" id="roadmap-header">
+                <h2 class="roadmap-title">How <span class="highlight">GADDZY Works</span></h2>
+                <p class="roadmap-subtitle">Your journey from quote to cash</p>
+            </div>
+
+            <!-- Horizontal roadmap canvas -->
+            <div class="roadmap-canvas" id="roadmap-canvas">
+
+                <!-- ── 3 Independent Step Cards ── -->
+                <div class="pin-markers" id="pin-markers">
+
+                    <!-- Step 1 — Check Price -->
+                    <div class="roadmap-step pin-marker is-active" id="step-card-1" data-step="1">
+                        <div class="pin-head">
+                            <div class="pin-circle">
+                                <svg class="roadmap-icon" viewBox="0 0 24 24" fill="none" stroke="#6A0DAD"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    style="width:20px; height:20px; display:block;">
+                                    <path
+                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
+                                    </path>
+                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="pin-card">
+                            <span class="pin-step-num">01</span>
+                            <h3 class="pin-card-title">Check Price</h3>
+                            <p class="pin-card-desc">Answer a few quick questions and get an instant automated valuation
+                                in 60 seconds.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 — Schedule Pickup -->
+                    <div class="roadmap-step pin-marker" id="step-card-2" data-step="2">
+                        <div class="pin-head">
+                            <div class="pin-circle">
+                                <svg class="roadmap-icon" viewBox="0 0 24 24" fill="none" stroke="#6A0DAD"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    style="width:20px; height:20px; display:block;">
+                                    <rect x="1" y="3" width="15" height="13"></rect>
+                                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="pin-card">
+                            <span class="pin-step-num">02</span>
+                            <h3 class="pin-card-title">Schedule Pickup</h3>
+                            <p class="pin-card-desc">Free doorstep pickup at your preferred date &amp; time — our
+                                certified agent comes to you.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 — Get Paid -->
+                    <div class="roadmap-step pin-marker" id="step-card-3" data-step="3">
+                        <div class="pin-head">
+                            <div class="pin-circle">
+                                <svg class="roadmap-icon" viewBox="0 0 24 24" fill="none" stroke="#6A0DAD"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    style="width:20px; height:20px; display:block;">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="pin-card">
+                            <span class="pin-step-num">03</span>
+                            <h3 class="pin-card-title">Get Paid</h3>
+                            <p class="pin-card-desc">100% upfront cash or UPI transfer before our executive even leaves
+                                your doorstep.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+    <!-- ==========================================================================
+         7. WHY US SECTION (Cinematic Interactive Expanding Card Slider)
+         ========================================================================== -->
+    <section class="why-section" id="why-us">
+        <div class="container">
+            <div class="why-section-header">
+                <div class="section-header-left">
+                    <h2 class="section-title">Why <span class="highlight">Us</span></h2>
+                    <p class="section-subtitle">India's most trusted gadget re-commerce & instant selling platform</p>
+                </div>
+                <!-- Navigation buttons (top-right) -->
+                <div class="why-nav-buttons">
+                    <button class="why-nav-btn prev" id="why-prev-btn" aria-label="Previous Feature">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button class="why-nav-btn next" id="why-next-btn" aria-label="Next Feature">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Expanding Slider Container -->
+            <div class="why-slider-wrapper">
+                <div class="why-slider" id="why-slider">
+
+                    <!-- Card 1 — Best Prices -->
+                    <div class="why-card active" data-index="0">
+                        <div class="why-card-collapsed">
+                            <span class="collapsed-num">01</span>
+                            <div class="collapsed-title">Best Prices</div>
+                            <div class="collapsed-icon"><i class="fa-solid fa-tag"></i></div>
+                        </div>
+                        <div class="why-card-expanded">
+                            <div class="card-bg-deco"></div>
+                            <div class="why-card-text">
+                                <span class="expanded-num">01</span>
+                                <h3 class="expanded-title">Best Prices</h3>
+                                <p class="expanded-desc">AI-driven price discovery engine guarantees maximum market
+                                    resale value for your device.</p>
+                                <div class="expanded-cta">
+                                    <span>Sell Now</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="why-card-visual">
+                                <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="phoneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="rgba(255, 255, 255, 0.3)" />
+                                            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.05)" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect x="35" y="20" width="90" height="120" rx="14"
+                                        stroke="rgba(255, 255, 255, 0.3)" stroke-width="2" fill="url(#phoneGrad)" />
+                                    <rect x="70" y="25" width="20" height="4" rx="2" fill="rgba(255, 255, 255, 0.4)" />
+                                    <path d="M 65 60 L 105 60 L 115 70 L 115 100 L 65 100 Z" fill="#FFFFFF"
+                                        opacity="0.9" />
+                                    <circle cx="75" cy="80" r="4" fill="#4B0082" />
+                                    <text x="83" y="87" font-family="'Plus Jakarta Sans', sans-serif" font-size="16"
+                                        font-weight="900" fill="#4B0082">₹</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 — Instant Payment -->
+                    <div class="why-card" data-index="1">
+                        <div class="why-card-collapsed">
+                            <span class="collapsed-num">02</span>
+                            <div class="collapsed-title">Instant Payment</div>
+                            <div class="collapsed-icon"><i class="fa-solid fa-bolt"></i></div>
+                        </div>
+                        <div class="why-card-expanded">
+                            <div class="card-bg-deco"></div>
+                            <div class="why-card-text">
+                                <span class="expanded-num">02</span>
+                                <h3 class="expanded-title">Instant Payment</h3>
+                                <p class="expanded-desc">Receive 100% full money transfer directly via UPI or cash
+                                    before we leave your home.</p>
+                                <div class="expanded-cta">
+                                    <span>Sell Now</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="why-card-visual">
+                                <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="walletGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="rgba(255, 255, 255, 0.3)" />
+                                            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.05)" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect x="30" y="45" width="100" height="70" rx="12"
+                                        stroke="rgba(255, 255, 255, 0.3)" stroke-width="2" fill="url(#walletGrad)" />
+                                    <rect x="50" y="25" width="60" height="30" rx="4" fill="#FFFFFF" opacity="0.9" />
+                                    <text x="73" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="15"
+                                        font-weight="900" fill="#4B0082">₹</text>
+                                    <path d="M 100 65 L 130 65 L 130 95 L 100 95 Z" fill="#FFFFFF" opacity="0.8" />
+                                    <circle cx="115" cy="80" r="4" fill="#4B0082" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 — Convenient Quote -->
+                    <div class="why-card" data-index="2">
+                        <div class="why-card-collapsed">
+                            <span class="collapsed-num">03</span>
+                            <div class="collapsed-title">Convenient Quote</div>
+                            <div class="collapsed-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                        </div>
+                        <div class="why-card-expanded">
+                            <div class="card-bg-deco"></div>
+                            <div class="why-card-text">
+                                <span class="expanded-num">03</span>
+                                <h3 class="expanded-title">Simple & Convenient</h3>
+                                <p class="expanded-desc">Hassle-free 60-second online quote process with zero hidden
+                                    diagnostic fees.</p>
+                                <div class="expanded-cta">
+                                    <span>Get Quote</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="why-card-visual">
+                                <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="quoteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="rgba(255, 255, 255, 0.3)" />
+                                            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.05)" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect x="35" y="20" width="90" height="120" rx="14"
+                                        stroke="rgba(255, 255, 255, 0.3)" stroke-width="2" fill="url(#quoteGrad)" />
+                                    <rect x="70" y="25" width="20" height="4" rx="2" fill="rgba(255, 255, 255, 0.4)" />
+                                    <rect x="55" y="45" width="50" height="70" rx="6" fill="#FFFFFF" />
+                                    <line x1="65" y1="62" x2="85" y2="62" stroke="#4B0082" stroke-width="2.5"
+                                        stroke-linecap="round" />
+                                    <line x1="65" y1="74" x2="95" y2="74" stroke="#4B0082" stroke-width="2.5"
+                                        stroke-linecap="round" />
+                                    <line x1="65" y1="86" x2="78" y2="86" stroke="#4B0082" stroke-width="2.5"
+                                        stroke-linecap="round" />
+                                    <circle cx="95" cy="88" r="4" fill="#4B0082" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 — Free Doorstep Pickup -->
+                    <div class="why-card" data-index="3">
+                        <div class="why-card-collapsed">
+                            <span class="collapsed-num">04</span>
+                            <div class="collapsed-title">Free Pickup</div>
+                            <div class="collapsed-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                        </div>
+                        <div class="why-card-expanded">
+                            <div class="card-bg-deco"></div>
+                            <div class="why-card-text">
+                                <span class="expanded-num">04</span>
+                                <h3 class="expanded-title">Free Doorstep Pickup</h3>
+                                <p class="expanded-desc">Zero delivery or pickup charges across 15,000+ pincodes across
+                                    India.</p>
+                                <div class="expanded-cta">
+                                    <span>Schedule Pickup</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="why-card-visual">
+                                <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="pickupGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="rgba(255, 255, 255, 0.25)" />
+                                            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.05)" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M 30 95 L 60 95 L 70 75 L 100 75 L 110 95"
+                                        stroke="rgba(255, 255, 255, 0.4)" stroke-width="2.5" stroke-linecap="round" />
+                                    <rect x="25" y="50" width="40" height="40" rx="8" stroke="rgba(255, 255, 255, 0.3)"
+                                        stroke-width="2" fill="url(#pickupGrad)" />
+                                    <rect x="65" y="45" width="30" height="25" rx="4" fill="#FFFFFF" />
+                                    <circle cx="80" cy="57" r="4" fill="#4B0082" />
+                                    <circle cx="40" cy="115" r="14" stroke="rgba(255, 255, 255, 0.4)"
+                                        stroke-width="2" />
+                                    <circle cx="100" cy="115" r="14" stroke="rgba(255, 255, 255, 0.4)"
+                                        stroke-width="2" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 — Secure Data Wipe -->
+                    <div class="why-card" data-index="4">
+                        <div class="why-card-collapsed">
+                            <span class="collapsed-num">05</span>
+                            <div class="collapsed-title">Secure Data Wipe</div>
+                            <div class="collapsed-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        </div>
+                        <div class="why-card-expanded">
+                            <div class="card-bg-deco"></div>
+                            <div class="why-card-text">
+                                <span class="expanded-num">05</span>
+                                <h3 class="expanded-title">Factory Grade Data Wipe</h3>
+                                <p class="expanded-desc">100% DoD certified data destruction software ensures your
+                                    private data is wiped clean forever.</p>
+                                <div class="expanded-cta">
+                                    <span>Safe & Secure</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="why-card-visual">
+                                <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="wipeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="rgba(255, 255, 255, 0.25)" />
+                                            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.05)" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect x="30" y="30" width="70" height="110" rx="10"
+                                        stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5" fill="none" />
+                                    <path
+                                        d="M 90 40 C 115 40, 135 50, 135 50 C 135 85, 115 120, 90 135 C 65 120, 45 85, 45 50 C 45 50, 65 40, 90 40 Z"
+                                        stroke="rgba(255, 255, 255, 0.35)" stroke-width="2.5" fill="url(#wipeGrad)" />
+                                    <circle cx="90" cy="85" r="18" fill="#FFFFFF" />
+                                    <path d="M 83 85 L 88 90 L 98 80" stroke="#4B0082" stroke-width="3"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 — Valid Invoice -->
+                    <div class="why-card" data-index="5">
+                        <div class="why-card-collapsed">
+                            <span class="collapsed-num">06</span>
+                            <div class="collapsed-title">Valid Invoice</div>
+                            <div class="collapsed-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                        </div>
+                        <div class="why-card-expanded">
+                            <div class="card-bg-deco"></div>
+                            <div class="why-card-text">
+                                <span class="expanded-num">06</span>
+                                <h3 class="expanded-title">Valid Purchase Invoice</h3>
+                                <p class="expanded-desc">Receive an official legally valid digital bill and sale
+                                    transfer receipt instantly.</p>
+                                <div class="expanded-cta">
+                                    <span>Get Digital Bill</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="why-card-visual">
+                                <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="invoiceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="rgba(255, 255, 255, 0.3)" />
+                                            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.05)" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect x="40" y="20" width="80" height="120" rx="8" stroke="rgba(255, 255, 255, 0.3)"
+                                        stroke-width="2" fill="url(#invoiceGrad)" />
+                                    <circle cx="80" cy="80" r="20" fill="#FFFFFF" />
+                                    <text x="74" y="86" font-family="'Plus Jakarta Sans', sans-serif" font-size="16"
+                                        font-weight="900" fill="#4B0082">₹</text>
+                                    <line x1="55" y1="40" x2="85" y2="40" stroke="rgba(255, 255, 255, 0.5)"
+                                        stroke-width="2.5" stroke-linecap="round" />
+                                    <line x1="55" y1="52" x2="105" y2="52" stroke="rgba(255, 255, 255, 0.5)"
+                                        stroke-width="2.5" stroke-linecap="round" />
+                                    <line x1="55" y1="110" x2="105" y2="110" stroke="rgba(255, 255, 255, 0.5)"
+                                        stroke-width="2.5" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ==========================================================================
+         9. TOP MODELS — True Infinite Center-Focus Carousel
+         ========================================================================== -->
+    <section class="top-models-section" id="top-models-section">
+        <div class="container">
+            <div class="carousel-header-wrap">
+                <div class="section-header left-aligned" style="margin-bottom: 0;">
+                    <h2 class="section-title">Top <span class="highlight">Models</span></h2>
+                </div>
+                <div class="carousel-nav-btns">
+                    <button class="carousel-nav-btn" id="top-models-prev" aria-label="Previous model">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-nav-btn" id="top-models-next" aria-label="Next model">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Infinite Carousel Viewport -->
+        <div class="inf-carousel-viewport" id="top-models-viewport">
+            <div class="inf-carousel-track" id="top-models-track">
+                <!-- Cards injected by JS (with clones) -->
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Dot Indicators -->
+            <div class="inf-carousel-dots" id="top-models-dots"></div>
+        </div>
+    </section>
+
+
+
+    <!-- ==========================================================================
+         10. FOOTER (6 Columns)
+         ========================================================================== -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- Column 1: Logo & Socials -->
+                <div class="footer-col-logo">
+                    <div class="footer-logo">
+                        <img src="static/images/Gaddzy-Assets/logo.png" alt="GADDZY Logo" class="footer-logo-img">
+                    </div>
+                    <p class="footer-desc">
+                        India's premier re-commerce platform for selling used smartphones, laptops, smartwatches, and
+                        tablets with instant cash & free doorstep pickup.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Company -->
+                <div>
+                    <h5 class="footer-col-title">Company</h5>
+                    <div class="footer-links">
+                        <a href="#about">About Us</a>
+                        <a href="#careers">Careers</a>
+                    </div>
+                </div>
+
+                <!-- Column 3: Sell Device -->
+                <div>
+                    <h5 class="footer-col-title">Sell Device</h5>
+                    <div class="footer-links">
+                        <a href="#brands">Mobile Phone</a>
+                        <a href="#gadgets">Tablet</a>
+                        <a href="#gadgets">Watch</a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Help & Support -->
+                <div>
+                    <h5 class="footer-col-title">Help & Support</h5>
+                    <div class="footer-links">
+                        <a href="#faq">FAQ</a>
+                        <a href="#contact">Contact Us</a>
+                        <a href="shipping.html">Shipping Policy</a>
+                        <a href="returns.html">Return Policy</a>
+                    </div>
+                </div>
+
+                <!-- Column 5: More Information -->
+                <div>
+                    <h5 class="footer-col-title">More Info</h5>
+                    <div class="footer-links">
+                        <a href="terms.html">Terms & Conditions</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="#use">Terms of Use</a>
+                        <a href="#cookie">Cookie Policy</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ==========================================================================
+             11. COMPANY INFORMATION SECTION
+             ========================================================================== -->
+        <div class="company-info-bar">
+            <div class="container">
+                <div class="disclaimer-text">
+                    <div
+                        style="text-align: center; font-size: 0.82rem; color: var(--text-muted); margin-top: 15px; border-top: 1.5px dashed rgba(255,255,255,0.15); padding-top: 15px;">
+                        Copyright &copy; 2025. sai mobiles. All Rights Reserved
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Footer Layout Component -->
+    <script src="static/js/global-footer.js"></script>
+
+    <!-- ==========================================================================
+         VANILLA JAVASCRIPT LOGIC
+         ========================================================================== -->
+    <script src="static/js/landing/landing.js"></script>
+</body>
+
+</html>

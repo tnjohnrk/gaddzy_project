@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Gaddzy Engine - Quote Calculator</title>
+    <link class="favicon" rel="icon" type="image/png" sizes="32x32" href="../static/images/Gaddzy-Assets/favicon.png">
+    <link rel="shortcut icon" href="../static/images/Gaddzy-Assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../static/images/Gaddzy-Assets/favicon.ico">
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/css/landing/landing.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <style>
+        .main-content {
+            margin-left: 0 !important;
+            padding-bottom: 20px !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+        .step-header-container {
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            margin: 0 0 8px 0;
+        }
+        .back-btn {
+            flex-shrink: 0; 
+            width: 36px; 
+            height: 36px; 
+            border-radius: 50%; 
+            border: 1px solid #e2e8f0; 
+            background: #ffffff; 
+            color: #0f172a; 
+            cursor: pointer; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+        .back-btn:hover { background: #f8fafc; }
+        .step-title {
+            font-weight: 700; 
+            color: #0f172a; 
+            margin: 0; 
+            font-size: clamp(1.1rem, 4vw, 1.4rem);
+            line-height: 1.3;
+        }
+        #modelGrid { display: grid; gap: 20px; }
+        @media (max-width: 599px) { #modelGrid { grid-template-columns: repeat(2, 1fr); gap: 15px; } }
+        @media (min-width: 600px) and (max-width: 991px) { #modelGrid { grid-template-columns: repeat(4, 1fr); } }
+        @media (min-width: 992px) { #modelGrid { grid-template-columns: repeat(6, 1fr); } }
+        .series-btn {
+            padding: 6px 16px; border-radius: 20px;
+            background: var(--surface); border: 1px solid var(--border);
+            color: var(--text-muted); cursor: pointer; white-space: nowrap;
+            font-size: 0.85rem; transition: all 0.2s ease;
+        }
+        .series-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+        #seriesFilterContainer::-webkit-scrollbar { height: 4px; }
+        #seriesFilterContainer::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+        /* ── Mobile-only: Model page compact layout ── */
+        @media (max-width: 768px) {
+            .main-content {
+                padding-top: 0 !important;
+            }
+            #modelGridContainer {
+                padding: 4px 0 !important;
+            }
+            .page-breadcrumb {
+                margin-bottom: 6px !important;
+                font-size: 0.72rem !important;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .page-breadcrumb a {
+                max-width: 80px !important;
+            }
+            .page-breadcrumb .bc-current {
+                max-width: 110px !important;
+            }
+            .step-header-container {
+                gap: 8px !important;
+                margin: 0 0 6px 0 !important;
+            }
+            .back-btn {
+                width: 30px !important;
+                height: 30px !important;
+                font-size: 0.85rem !important;
+            }
+            .step-title {
+                font-size: 1.15rem !important;
+            }
+            #modelSearchWrapper {
+                margin-top: 8px !important;
+                margin-bottom: 12px !important;
+            }
+            #modelSearchWrapper input {
+                height: 40px !important;
+                padding-left: 38px !important;
+                font-size: 0.88rem !important;
+                border-radius: 10px !important;
+            }
+            #modelSearchWrapper i {
+                left: 14px !important;
+                font-size: 0.95rem !important;
+            }
+            #chooseModelHeading {
+                margin-bottom: 8px !important;
+                font-size: 0.95rem !important;
+            }
+            #seriesFilterContainer {
+                margin-bottom: 12px !important;
+                padding-bottom: 6px !important;
+                gap: 6px !important;
+            }
+            .series-btn {
+                padding: 4px 12px !important;
+                font-size: 0.78rem !important;
+                border-radius: 14px !important;
+            }
+            #modelGrid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 10px !important;
+            }
+            #modelGrid .selectable-card {
+                padding: 12px 8px !important;
+                border-radius: 12px !important;
+            }
+            #modelGrid .selectable-card img {
+                height: 80px !important;
+                max-height: 80px !important;
+                margin-bottom: 10px !important;
+                width: 100% !important;
+                object-fit: contain !important;
+            }
+            #modelGrid .selectable-card div {
+                font-size: 0.8rem !important;
+                font-weight: 500 !important;
+                line-height: 1.3 !important;
+                color: var(--text-main) !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Clean Premium Page Loader -->
+    <div id="page-loader" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #FFFFFF; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 999999; opacity: 1; transition: opacity 0.3s ease, visibility 0.3s ease; visibility: visible;">
+        <style>
+            .loader-logo {
+                width: 60px;
+                height: 60px;
+                animation: pulseText 1s infinite ease-in-out;
+            }
+            .loader-text {
+                margin-top: 16px;
+                font-family: 'Outfit', 'Poppins', sans-serif;
+                font-size: 0.85rem;
+                font-weight: 700;
+                color: #20042f;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                animation: pulseText 1s infinite ease-in-out;
+            }
+            @keyframes pulseText {
+                0%, 100% { opacity: 0.6; transform: scale(0.98); }
+                50% { opacity: 1; transform: scale(1); }
+            }
+        </style>
+        <img src="../static/images/Gaddzy-Assets/favicon.ico" alt="Gaddzy Loader" class="loader-logo">
+        <div class="loader-text">Loading GADDZY...</div>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+            var loader = document.getElementById('page-loader');
+            if (loader) {
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+                setTimeout(function() {
+                    if (loader && loader.parentNode) {
+                        loader.parentNode.removeChild(loader);
+                    }
+                }, 300);
+            }
+        });
+    </script>
+
+    <!-- Global Header Layout Component -->
+    <script src="../static/js/global-header.js"></script>
+
+    <div class="app-container">
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
+                <!-- Model Grid Container -->
+                <div id="modelGridContainer" style="padding: 10px 0;">
+                    <!-- Dynamic Breadcrumb -->
+                    <nav class="page-breadcrumb" id="page-breadcrumb" aria-label="Breadcrumb"></nav>
+                    <script>
+                        (function() {
+                            var params = new URLSearchParams(window.location.search);
+                            var brand = params.get('brand') || 'Brand';
+                            var bc = document.getElementById('page-breadcrumb');
+                            bc.innerHTML =
+                                '<a href="../index.html">Home</a>' +
+                                '<span class="bc-sep"><i class="fas fa-chevron-right"></i></span>' +
+                                '<a href="brand.html">Select Your Brand</a>' +
+                                '<span class="bc-sep"><i class="fas fa-chevron-right"></i></span>' +
+                                '<span class="bc-current">Select ' + brand + ' Model</span>';
+                        })();
+                    </script>
+
+                    <!-- Dynamic page heading with back button -->
+                    <div class="step-header-container">
+                        <button onclick="goBackToBrands()" class="back-btn">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <h2 id="dynamicModelTitle" class="step-title">Sell Old <span id="brandLabel">Phone</span> Mobile Phone</h2>
+                    </div>
+ 
+                    <div id="modelSearchWrapper" style="margin-bottom: 30px; position: relative; margin-top: 15px;">
+                        <i class="fas fa-search" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem;"></i>
+                        <input type="text" id="modelSearch" class="form-control" placeholder="Search model to sell..." style="padding-left: 45px; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); height: 50px; font-size: 1rem; width: 100%;">
+                    </div>
+                    
+                    <h4 id="chooseModelHeading" style="margin-bottom: 15px; font-weight: 600;">Choose Model</h4>
+                    <!-- Series Filter -->
+                    <div id="seriesFilterContainer" style="display: flex; gap: 10px; overflow-x: auto; margin-bottom: 20px; padding-bottom: 10px;">
+                        <!-- Dynamically populated -->
+                    </div>
+ 
+                    <div id="modelGrid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+ 
+    <!-- Toast Container Placeholder -->
+    <div id="toast-container" class="toast-container"></div>
+ 
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedBrandName = urlParams.get('brand') || 'Apple';
+        let devicesDb = [];
+        let availableModels = [];
+        let activeSeries = 'All';
+ 
+        document.addEventListener('DOMContentLoaded', async () => {
+            const modelGrid = document.getElementById('modelGrid');
+            const modelSearch = document.getElementById('modelSearch');
+            
+            // Set dynamic titles and placeholders
+            document.getElementById('brandLabel').innerText = selectedBrandName;
+            modelSearch.placeholder = `Search ${selectedBrandName} model to sell...`;
+ 
+            function getSeriesFromModel(brand, fullModelName) {
+                let parts = fullModelName.split(' ');
+                if (parts[0].toLowerCase() === brand.toLowerCase()) parts.shift();
+                if (parts[0] && ['iphone', 'galaxy', 'redmi', 'mi', 'poco'].includes(parts[0].toLowerCase())) parts.shift();
+                if (!parts.length) return 'Other';
+                
+                let firstPart = parts[0].toUpperCase();
+                
+                if (brand.toLowerCase() === 'apple' && firstPart.startsWith('X')) return 'X Series';
+                if (brand.toLowerCase() === 'samsung') {
+                    if (['S', 'A', 'M', 'F', 'J', 'C', 'Z'].includes(firstPart.charAt(0))) return firstPart.charAt(0) + ' Series';
+                    if (firstPart === 'NOTE') return 'Note Series';
+                }
+                
+                let numMatch = firstPart.match(/\d+/);
+                if (numMatch) return numMatch[0] + ' Series';
+                
+                return firstPart + ' Series';
+            }
+ 
+            function renderSeriesFilters(models, brand) {
+                const container = document.getElementById('seriesFilterContainer');
+                let seriesSet = new Set();
+                models.forEach(m => seriesSet.add(getSeriesFromModel(brand, m)));
+                let seriesArray = Array.from(seriesSet).sort();
+                
+                let html = `<button class="series-btn active" onclick="filterBySeries('All')">All</button>`;
+                seriesArray.forEach(s => {
+                    html += `<button class="series-btn" onclick="filterBySeries('${s}')">${s}</button>`;
+                });
+                container.innerHTML = html;
+            }
+            
+            window.filterBySeries = function(series) {
+                activeSeries = series;
+                const btns = document.querySelectorAll('.series-btn');
+                btns.forEach(btn => {
+                    if (btn.innerText === series) btn.classList.add('active');
+                    else btn.classList.remove('active');
+                });
+                
+                let filtered = availableModels;
+                if (series !== 'All') {
+                    filtered = availableModels.filter(m => getSeriesFromModel(selectedBrandName, m) === series);
+                }
+                const term = modelSearch.value.toLowerCase();
+                if (term) {
+                    filtered = filtered.filter(m => m.toLowerCase().includes(term));
+                }
+                renderModels(filtered);
+            };
+ 
+            window.goBackToBrands = function() {
+                window.location.href = 'brand.html';
+            };
+ 
+            // Render Models
+            function renderModels(modelsToRender) {
+                modelGrid.innerHTML = '';
+                if (modelsToRender.length === 0) {
+                    modelGrid.innerHTML = `<div style="grid-column: 1/-1; color: var(--text-muted); text-align: center; padding: 20px;">No models found.</div>`;
+                    return;
+                }
+                modelsToRender.forEach(m => {
+                    const brandDir = selectedBrandName.charAt(0).toUpperCase() + selectedBrandName.slice(1).toLowerCase();
+                    const brandFileName = brandDir + '.avif';
+                    const formattedModel = m.toLowerCase().replace(/\s+/g, '-');
+                    const imgSrc = `../static/images/All-Brand-Mobile-Image/${brandDir}/${formattedModel}.png`;
+                    const fallbackSrc = `../static/images/Brand-Logo/${brandFileName}`;
+ 
+                    modelGrid.innerHTML += `
+                        <div class="selectable-card" style="padding: 25px 15px; text-align: center;" onclick="selectModel('${m}')">
+                            <img src="${imgSrc}" onerror="this.onerror=null; this.src='${fallbackSrc}';" alt="${m}" style="height: 140px; width: 100%; object-fit: contain; margin-bottom: 20px;">
+                            <div style="font-weight: 500; font-size: 0.95rem; color: var(--text-main);">${m}</div>
+                        </div>
+                    `;
+                });
+            }
+ 
+            modelSearch.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                let filtered = availableModels;
+                if (activeSeries !== 'All') {
+                    filtered = filtered.filter(m => getSeriesFromModel(selectedBrandName, m) === activeSeries);
+                }
+                filtered = filtered.filter(m => m.toLowerCase().includes(term));
+                renderModels(filtered);
+            });
+ 
+            window.selectModel = function(model) {
+                window.location.href = 'varient.html?brand=' + encodeURIComponent(selectedBrandName) + '&model=' + encodeURIComponent(model);
+            };
+ 
+            // Fetch devices
+            try {
+                const res = await fetch('../data/devices_db.json');
+                devicesDb = await res.json();
+                availableModels = [...new Set(devicesDb.filter(d => d.brand.toLowerCase() === selectedBrandName.toLowerCase()).map(d => d.model))].sort();
+                renderSeriesFilters(availableModels, selectedBrandName);
+                renderModels(availableModels);
+            } catch (e) {
+                console.error('Failed to load models:', e);
+            }
+        });
+    </script>
+    <!-- Global Footer Layout Component -->
+    <script src="../static/js/global-footer.js"></script>
+</body>
+</html>
