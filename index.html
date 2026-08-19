@@ -92,6 +92,48 @@
                 <!-- ── Hero Left Side ── -->
                 <div class="hero-left">
 
+                    <!-- Mobile Hero Banner Carousel (Positioned directly below mobile header) -->
+                    <div class="mobile-hero-banner-wrap">
+                        <div class="hero-banner-carousel" id="mobile-hero-banner-carousel" aria-label="Promotional Banners">
+                            <div class="banner-track-wrapper">
+                                <div class="banner-track" id="mobile-banner-track">
+                                    <div class="banner-slide" data-slide="0">
+                                        <a href="pages/brand.html" class="banner-slide-link" aria-label="Sell Old Phone Instant Cash">
+                                            <img src="./static/images/banners/b1.png" alt="GADDZY Offer 1" loading="eager">
+                                        </a>
+                                    </div>
+                                    <div class="banner-slide" data-slide="1">
+                                        <a href="pages/brand.html?brand=Apple" class="banner-slide-link" aria-label="Sell Apple iPhone">
+                                            <img src="./static/images/banners/b2.png" alt="GADDZY Offer 2" loading="lazy">
+                                        </a>
+                                    </div>
+                                    <div class="banner-slide" data-slide="2">
+                                        <a href="pages/brand.html?brand=Samsung" class="banner-slide-link" aria-label="Sell Samsung Phone">
+                                            <img src="./static/images/banners/b3.png" alt="GADDZY Offer 3" loading="lazy">
+                                        </a>
+                                    </div>
+                                    <div class="banner-slide" data-slide="3">
+                                        <a href="pages/brand.html" class="banner-slide-link" aria-label="Sell Your Gadget">
+                                            <img src="./static/images/banners/b4.png" alt="GADDZY Offer 4" loading="lazy">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="banner-arrow banner-arrow-prev" id="mobile-banner-prev" aria-label="Previous banner">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button class="banner-arrow banner-arrow-next" id="mobile-banner-next" aria-label="Next banner">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                            <div class="banner-pagination" id="mobile-banner-pagination">
+                                <button class="banner-dot active" data-slide="0" aria-label="Go to banner 1"></button>
+                                <button class="banner-dot" data-slide="1" aria-label="Go to banner 2"></button>
+                                <button class="banner-dot" data-slide="2" aria-label="Go to banner 3"></button>
+                                <button class="banner-dot" data-slide="3" aria-label="Go to banner 4"></button>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <!-- Mobile/Tablet search bar (hidden on desktop) -->
                     <div class="search-container mobile-hero-search">
@@ -134,8 +176,11 @@
                         </div>
                     </div>
 
-                    <h1 class="hero-page-title">
+                    <h1 class="hero-page-title desktop-hero-title">
                         Sell Old Mobile Phone for <span>Instant Cash</span>
+                    </h1>
+                    <h1 class="hero-page-title mobile-dynamic-hero-title">
+                        Sell <span class="morph-wrap"><span class="morph-text" id="morph-your-on">Your</span></span> Gad<span class="morph-wrap"><span class="morph-text" id="morph-get-dzy">get</span></span>
                     </h1>
 
                     <p class="hero-desc-text" style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">
@@ -279,6 +324,153 @@
     </section>
 
     <!-- ==========================================================================
+         3A-MOBILE. TOP SELLING BRANDS (2x3 Grid - Mobile Only)
+         ========================================================================== -->
+    <section class="mobile-top-brands-section" id="mobile-top-brands">
+        <div class="container">
+            <div class="section-header left-aligned" style="margin-bottom: 16px;">
+                <h2 class="section-title">Top Selling <span class="highlight">Brands</span></h2>
+            </div>
+            <div class="mobile-brands-grid">
+                <!-- Brand 1: Apple -->
+                <a href="pages/brand.html?brand=Apple" class="mobile-brand-card">
+                    <img src="static/images/Brand-Logo/Apple.avif" alt="Apple">
+                </a>
+                <!-- Brand 2: Samsung -->
+                <a href="pages/brand.html?brand=Samsung" class="mobile-brand-card">
+                    <img src="static/images/Brand-Logo/Samsung.avif" alt="Samsung">
+                </a>
+                <!-- Brand 3: OnePlus -->
+                <a href="pages/brand.html?brand=OnePlus" class="mobile-brand-card">
+                    <img src="static/images/Brand-Logo/Oneplus.avif" alt="OnePlus">
+                </a>
+                <!-- Brand 4: Xiaomi -->
+                <a href="pages/brand.html?brand=Xiaomi" class="mobile-brand-card">
+                    <img src="static/images/Brand-Logo/Xiaomi.avif" alt="Xiaomi">
+                </a>
+                <!-- Brand 5: Vivo -->
+                <a href="pages/brand.html?brand=Vivo" class="mobile-brand-card">
+                    <img src="static/images/Brand-Logo/Vivo.avif" alt="Vivo">
+                </a>
+                <!-- Card 6: MORE Button (No Box, Text + Arrow Icon) -->
+                <a href="pages/brand.html" class="mobile-brand-card mobile-brand-more">
+                    <span class="mobile-brand-name">MORE</span>
+                    <i class="fa-solid fa-arrow-right more-icon"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         3A2. EXPLORE SECTION (2 Cards per Row - Top Selling Devices & Best Price)
+         ========================================================================== -->
+    <section class="explore-section" id="explore">
+        <div class="container">
+            <div class="section-header left-aligned" style="margin-bottom: 18px;">
+                <h2 class="section-title">Explore <span class="highlight">Devices</span></h2>
+            </div>
+            <div class="explore-grid">
+                <!-- Explore Card 1 -->
+                <a href="pages/varient.html?brand=Apple&model=Apple iPhone 15 Pro Max" class="explore-card">
+                    <div class="explore-img-wrap">
+                        <img src="static/images/All-Brand-Mobile-Image/Apple/apple-iphone-15-pro-max.png" alt="iPhone 15 Pro Max">
+                    </div>
+                    <div class="explore-details">
+                        <h3 class="explore-card-title">iPhone 15 Pro Max</h3>
+                        <span class="explore-card-price">Get up to ₹88,500</span>
+                    </div>
+                </a>
+
+                <!-- Explore Card 2 -->
+                <a href="pages/varient.html?brand=Samsung&model=Samsung Galaxy S24 Ultra" class="explore-card">
+                    <div class="explore-img-wrap">
+                        <img src="static/images/All-Brand-Mobile-Image/Samsung/samsung-galaxy-s24-ultra.png" alt="Galaxy S24 Ultra">
+                    </div>
+                    <div class="explore-details">
+                        <h3 class="explore-card-title">Galaxy S24 Ultra</h3>
+                        <span class="explore-card-price">Get up to ₹79,000</span>
+                    </div>
+                </a>
+
+                <!-- Explore Card 3 -->
+                <a href="pages/varient.html?brand=Apple&model=Apple iPhone 14 Pro" class="explore-card">
+                    <div class="explore-img-wrap">
+                        <img src="static/images/All-Brand-Mobile-Image/Apple/apple-iphone-14-pro.png" alt="iPhone 14 Pro">
+                    </div>
+                    <div class="explore-details">
+                        <h3 class="explore-card-title">iPhone 14 Pro</h3>
+                        <span class="explore-card-price">Get up to ₹64,000</span>
+                    </div>
+                </a>
+
+                <!-- Explore Card 4 -->
+                <a href="pages/varient.html?brand=OnePlus&model=OnePlus 12" class="explore-card">
+                    <div class="explore-img-wrap">
+                        <img src="static/images/All-Brand-Mobile-Image/OnePlus/oneplus-12.png" alt="OnePlus 12 5G">
+                    </div>
+                    <div class="explore-details">
+                        <h3 class="explore-card-title">OnePlus 12 5G</h3>
+                        <span class="explore-card-price">Get up to ₹44,000</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         3B. HERO BANNER CAROUSEL SECTION
+         ========================================================================== -->
+    <section class="hero-banner-section" id="hero-banner">
+        <div class="container">
+            <div class="hero-banner-carousel" id="hero-banner-carousel" aria-label="Promotional Banners">
+                <!-- Slides Track -->
+                <div class="banner-track-wrapper">
+                    <div class="banner-track" id="banner-track">
+                        <div class="banner-slide" data-slide="0">
+                            <a href="pages/brand.html" class="banner-slide-link" aria-label="Sell Old Phone Instant Cash">
+                                <img src="./static/images/banners/b1.png" alt="GADDZY Promotional Offer 1" loading="eager">
+                            </a>
+                        </div>
+                        <div class="banner-slide" data-slide="1">
+                            <a href="pages/brand.html?brand=Apple" class="banner-slide-link" aria-label="Sell Apple iPhone">
+                                <img src="./static/images/banners/b2.png" alt="GADDZY Promotional Offer 2" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="banner-slide" data-slide="2">
+                            <a href="pages/brand.html?brand=Samsung" class="banner-slide-link" aria-label="Sell Samsung Phone">
+                                <img src="./static/images/banners/b3.png" alt="GADDZY Promotional Offer 3" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="banner-slide" data-slide="3">
+                            <a href="pages/brand.html" class="banner-slide-link" aria-label="Sell Your Gadget">
+                                <img src="./static/images/banners/b4.png" alt="GADDZY Promotional Offer 4" loading="lazy">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button class="banner-arrow banner-arrow-prev" id="banner-prev" aria-label="Previous banner">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="banner-arrow banner-arrow-next" id="banner-next" aria-label="Next banner">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <!-- Pagination Dots -->
+                <div class="banner-pagination" id="banner-pagination">
+                    <button class="banner-dot active" data-slide="0" aria-label="Go to banner 1"></button>
+                    <button class="banner-dot" data-slide="1" aria-label="Go to banner 2"></button>
+                    <button class="banner-dot" data-slide="2" aria-label="Go to banner 3"></button>
+                    <button class="banner-dot" data-slide="3" aria-label="Go to banner 4"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ==========================================================================
          4. TESTIMONIALS SECTION
          ========================================================================== -->
     <section class="testimonials-section" id="testimonials">
@@ -287,80 +479,66 @@
                 <h2 class="section-title">Customer <span class="highlight">Reviews</span></h2>
             </div>
 
-            <!-- Desktop Horizontal Cards Layout / Mobile vertical/horizontal swipe deck -->
-            <div class="testimonials-slider-container">
-                <div class="testimonials-track" id="testimonials-track">
-
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-card" data-index="0">
-                        <div class="testimonial-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Sold my old iPhone 14 Pro in less than 2 hours. The pickup
-                            executive came directly to my office, verified the phone condition, and transferred the cash
-                            instantly. GADDZY is amazing!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">R</div>
-                            <div class="author-info">
-                                <h4 class="author-name">Rahul Sharma</h4>
-                                <span class="author-meta">Verified Customer • Mumbai</span>
-                            </div>
+            <div class="testimonials-staggered-layout">
+                <!-- Testimonial 1 (Left) -->
+                <div class="testimonial-box align-left">
+                    <div class="testimonial-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Sold my old iPhone 14 Pro in less than 2 hours. The pickup
+                        executive came directly to my office, verified the phone condition, and transferred the cash
+                        instantly. GADDZY is amazing and so fast!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <h4 class="author-name">Rahul Sharma</h4>
+                            <span class="author-meta">Verified Customer • Mumbai</span>
                         </div>
                     </div>
-
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial-card" data-index="1">
-                        <div class="testimonial-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Got the highest price quote for my Samsung S22 Ultra. No hidden
-                            deductions, no bargain hassles. Very professional service and completely transparent
-                            valuation process."</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">P</div>
-                            <div class="author-info">
-                                <h4 class="author-name">Priya Patel</h4>
-                                <span class="author-meta">Verified Customer • Delhi</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial-card" data-index="2">
-                        <div class="testimonial-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"I was skeptical about selling online, but GADDZY's upfront UPI
-                            payment before pickup agent left my door won me over. Fully recommended if you want
-                            hassle-free selling!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">A</div>
-                            <div class="author-info">
-                                <h4 class="author-name">Anish Sen</h4>
-                                <span class="author-meta">Verified Customer • Kolkata</span>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
-                <!-- Mobile Navigation indicators/dots (hidden on desktop) -->
-                <div class="testimonials-dots" id="testimonials-dots">
-                    <span class="dot active" data-index="0"></span>
-                    <span class="dot" data-index="1"></span>
-                    <span class="dot" data-index="2"></span>
+                <!-- Testimonial 2 (Right) -->
+                <div class="testimonial-box align-right">
+                    <div class="testimonial-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Got the absolute highest price quote for my Samsung S22 Ultra compared to other platforms. No hidden deductions, no bargain hassles. Very professional service and completely transparent valuation process."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">P</div>
+                        <div class="author-info">
+                            <h4 class="author-name">Priya Patel</h4>
+                            <span class="author-meta">Verified Customer • Delhi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 (Left) -->
+                <div class="testimonial-box align-left">
+                    <div class="testimonial-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I was skeptical about selling online, but GADDZY's upfront UPI
+                        payment before the pickup agent left my door won me over. Fully recommended if you want
+                        a hassle-free selling experience!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4 class="author-name">Anish Sen</h4>
+                            <span class="author-meta">Verified Customer • Kolkata</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1293,3 +1293,183 @@ document.addEventListener('DOMContentLoaded', function initTestimonialsSlider() 
         }
     }
 });
+
+// ==========================================================================
+// HERO BANNER CAROUSEL LOGIC (Desktop & Mobile)
+// ==========================================================================
+function initHeroBannerCarousel() {
+    const carousels = [
+        document.getElementById('hero-banner-carousel'),
+        document.getElementById('mobile-hero-banner-carousel')
+    ];
+
+    carousels.forEach(carousel => {
+        if (!carousel) return;
+        const track = carousel.querySelector('.banner-track');
+        const prevBtn = carousel.querySelector('.banner-arrow-prev');
+        const nextBtn = carousel.querySelector('.banner-arrow-next');
+        const dotsContainer = carousel.querySelector('.banner-pagination');
+
+        if (!track) return;
+
+        const slides = Array.from(track.children);
+        if (slides.length === 0) return;
+
+        const dots = dotsContainer ? Array.from(dotsContainer.children) : [];
+        let currentIndex = 0;
+        let autoPlayTimer = null;
+        let resumeTimer = null;
+        const intervalTime = 4500;
+
+        function goToSlide(index) {
+            if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else if (index >= slides.length) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            dots.forEach((dot, i) => {
+                if (i === currentIndex) {
+                    dot.classList.add('active');
+                    dot.setAttribute('aria-current', 'true');
+                } else {
+                    dot.classList.remove('active');
+                    dot.removeAttribute('aria-current');
+                }
+            });
+        }
+
+        function nextSlide() {
+            goToSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentIndex - 1);
+        }
+
+        function startAutoPlay() {
+            stopAutoPlay();
+            autoPlayTimer = setInterval(nextSlide, intervalTime);
+        }
+
+        function stopAutoPlay() {
+            if (autoPlayTimer) clearInterval(autoPlayTimer);
+        }
+
+        function pauseAndScheduleResume() {
+            stopAutoPlay();
+            if (resumeTimer) clearTimeout(resumeTimer);
+            resumeTimer = setTimeout(startAutoPlay, 3000);
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                nextSlide();
+                pauseAndScheduleResume();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                prevSlide();
+                pauseAndScheduleResume();
+            });
+        }
+
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', (e) => {
+                e.preventDefault();
+                goToSlide(idx);
+                pauseAndScheduleResume();
+            });
+        });
+
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
+
+        let startX = 0;
+        let startY = 0;
+        let isSwiping = false;
+
+        carousel.addEventListener('touchstart', (e) => {
+            stopAutoPlay();
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            isSwiping = true;
+        }, { passive: true });
+
+        carousel.addEventListener('touchend', (e) => {
+            if (!isSwiping) return;
+            isSwiping = false;
+            const endX = e.changedTouches[0].clientX;
+            const endY = e.changedTouches[0].clientY;
+            const diffX = startX - endX;
+            const diffY = startY - endY;
+
+            if (Math.abs(diffX) > 35 && Math.abs(diffX) > Math.abs(diffY)) {
+                if (diffX > 0) nextSlide();
+                else prevSlide();
+            }
+            pauseAndScheduleResume();
+        }, { passive: true });
+
+        goToSlide(0);
+        startAutoPlay();
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initHeroBannerCarousel);
+
+// ==========================================================================
+// DYNAMIC HERO TITLE SYNCHRONIZED MORPH ANIMATION (Zigzag Motion - Mobile)
+// ==========================================================================
+function initDynamicHeadingAnimation() {
+    const yourOnElem = document.getElementById('morph-your-on');
+    const getDzyElem = document.getElementById('morph-get-dzy');
+
+    if (!yourOnElem || !getDzyElem) return;
+
+    let isStateB = false;
+
+    setInterval(() => {
+        // Step 1: Slide OUT in opposite directions (Word 1 DOWN, Word 2 UP)
+        yourOnElem.classList.add('morph-out');
+        getDzyElem.classList.add('morph-out');
+
+        setTimeout(() => {
+            // Step 2: Swap Text Values
+            if (!isStateB) {
+                yourOnElem.textContent = 'On';
+                getDzyElem.textContent = 'dzy';
+                isStateB = true;
+            } else {
+                yourOnElem.textContent = 'Your';
+                getDzyElem.textContent = 'get';
+                isStateB = false;
+            }
+
+            // Step 3: Remove morph-out and apply morph-in-start (starting positions: Word 1 TOP, Word 2 BOTTOM)
+            yourOnElem.classList.remove('morph-out');
+            getDzyElem.classList.remove('morph-out');
+
+            yourOnElem.classList.add('morph-in-start');
+            getDzyElem.classList.add('morph-in-start');
+
+            // Force browser reflow
+            void yourOnElem.offsetWidth;
+            void getDzyElem.offsetWidth;
+
+            // Step 4: Animate smoothly to center position
+            yourOnElem.classList.remove('morph-in-start');
+            getDzyElem.classList.remove('morph-in-start');
+        }, 320);
+    }, 3500);
+}
+
+document.addEventListener('DOMContentLoaded', initDynamicHeadingAnimation);

@@ -73,9 +73,11 @@ button, input, select {
 
 .container {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1456px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
 }
 
 /* Section Headings */
@@ -579,9 +581,178 @@ button, input, select {
     overflow: visible;
 }
 
-.hero-section .container {
-    padding-left: 36px;
-    padding-right: 36px;
+/* ==========================================================================
+   4B. HERO BANNER CAROUSEL SECTION
+   ========================================================================== */
+.hero-banner-section {
+    margin-top: 24px;
+    margin-bottom: 48px;
+    width: 100%;
+}
+
+.hero-banner-carousel {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1e1333 0%, #2e1045 100%);
+    box-shadow: 0 10px 30px rgba(106, 13, 173, 0.12);
+    border: 1px solid rgba(106, 13, 173, 0.15);
+}
+
+.banner-track-wrapper {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    position: relative;
+}
+
+.banner-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.banner-slide {
+    min-width: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-slide-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.banner-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+    transition: transform 0.5s ease;
+}
+
+/* Carousel Controls: Arrows */
+.banner-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--primary);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.banner-arrow-prev {
+    left: 16px;
+}
+
+.banner-arrow-next {
+    right: 16px;
+}
+
+.banner-arrow:hover {
+    background: var(--primary);
+    color: #FFFFFF;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 18px rgba(106, 13, 173, 0.35);
+}
+
+.banner-arrow:active {
+    transform: translateY(-50%) scale(0.96);
+}
+
+/* Carousel Controls: Pagination Dots */
+.banner-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.banner-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #CBD5E1;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.banner-dot:hover {
+    background: #94A3B8;
+}
+
+.banner-dot.active {
+    width: 30px;
+    border-radius: 999px;
+    background: var(--primary);
+    box-shadow: 0 2px 8px rgba(106, 13, 173, 0.3);
+}
+
+@media (max-width: 768px) {
+    .hero-banner-section {
+        margin-top: 16px;
+        margin-bottom: 28px;
+    }
+    .hero-banner-carousel {
+        border-radius: 12px;
+    }
+    .banner-track-wrapper {
+        border-radius: 12px;
+    }
+    .banner-slide img {
+        max-height: 240px;
+    }
+    .banner-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+    .banner-arrow-prev {
+        left: 8px;
+    }
+    .banner-arrow-next {
+        right: 8px;
+    }
+    .banner-pagination {
+        margin-top: 10px;
+        gap: 6px;
+    }
+    .banner-dot {
+        width: 8px;
+        height: 8px;
+    }
+    .banner-dot.active {
+        width: 22px;
+    }
 }
 
 /* ── Two-column grid ── */
@@ -2931,10 +3102,20 @@ button, input, select {
    16. RESPONSIVE BREAKPOINTS & MEDIA QUERIES
    ========================================================================== */
 
-/* 1. Tablets & Small Desktops (max-width: 1024px) */
+/* 1. Large Desktops & Laptops (max-width: 1440px) */
+@media (max-width: 1440px) {
+    .container {
+        max-width: 1280px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+/* 2. Tablets & Small Desktops (max-width: 1024px) */
 @media (max-width: 1024px) {
     .container {
-        padding: 0 20px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     
     .header-logo-img {
@@ -3169,8 +3350,8 @@ button, input, select {
 /* 3. Small Mobile Devices (max-width: 768px) */
 @media (max-width: 768px) {
     .header-logo-img {
-        height: 80px;
-        max-height: 80px;
+        height: 40px !important;
+        max-height: 40px !important;
     }
 
     /* Make hbc category cards static on mobile (no animation, always visible in their highlighted state) */
@@ -3255,8 +3436,8 @@ button, input, select {
     }
     
     .header-logo-img {
-        height: 88px !important;
-        max-height: 88px !important;
+        height: 38px !important;
+        max-height: 38px !important;
         width: auto !important;
         display: block !important;
     }
@@ -3264,29 +3445,45 @@ button, input, select {
     .user-controls {
         display: flex !important;
         align-items: center !important;
-        justify-content: center !important;
-        margin-left: 0 !important;
+        justify-content: flex-end !important;
+        margin-left: auto !important;
         height: 100% !important;
-        gap: 0 !important;
-        flex: none !important;
+        gap: 10px !important;
     }
 
     .user-controls .location-btn,
     .user-controls .profile-container,
-    .top-header .search-container {
+    .top-header .search-container,
+    .mobile-menu-toggle {
         display: none !important;
     }
     
-    .mobile-menu-toggle {
+    .mobile-header-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+    
+    .mobile-header-action-btn {
+        width: 40px !important;
+        height: 40px !important;
+        background: transparent !important;
+        color: #6A0DAD !important;
+        border: none !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        margin-left: 0 !important;
-        width: 36px !important;
-        height: 36px !important;
         font-size: 1.25rem !important;
-        color: var(--text-dark) !important;
         cursor: pointer !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        outline: none !important;
+        transition: transform 0.2s ease, opacity 0.2s ease !important;
+    }
+    .mobile-header-action-btn:active {
+        transform: scale(0.9) !important;
+        opacity: 0.7 !important;
+        background: transparent !important;
     }
     
     .mobile-hero-search {
@@ -4274,7 +4471,6 @@ html, body {
     overflow-x: hidden !important;
 }
 .container {
-    max-width: 100% !important;
     box-sizing: border-box !important;
 }
 
@@ -4468,35 +4664,37 @@ body.nav-open {
     border-bottom: 1.5px solid var(--border-color);
 }
 
-.testimonials-slider-container {
-    width: 100%;
-    position: relative;
-}
-
-.testimonials-track {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    width: 100%;
-}
-
-.testimonial-card {
-    background: #FFFFFF;
-    border: 1.5px solid var(--border-color);
-    border-radius: var(--radius-xl);
-    padding: 35px;
-    box-shadow: 0 6px 24px rgba(106, 13, 173, 0.02);
+.testimonials-staggered-layout {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 20px;
+    width: 100%;
+}
+
+.testimonial-box {
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    width: 75%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-sizing: border-box;
 }
 
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-soft);
-    box-shadow: 0 12px 36px rgba(106, 13, 173, 0.08);
+.testimonial-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-box.align-left {
+    align-self: flex-start;
+}
+
+.testimonial-box.align-right {
+    align-self: flex-end;
 }
 
 .testimonial-rating {
@@ -4504,14 +4702,14 @@ body.nav-open {
     gap: 4px;
     color: #F59E0B; /* Amber star */
     font-size: 0.95rem;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 }
 
 .testimonial-text {
     font-size: 1.02rem;
     line-height: 1.65;
     color: var(--text-dark);
-    margin-bottom: 28px;
+    margin-bottom: 20px;
     font-weight: 500;
 }
 
@@ -4552,106 +4750,370 @@ body.nav-open {
     color: var(--text-muted);
 }
 
-.testimonials-dots {
-    display: none;
-}
-
 /* Mobile & Tablet Testimonials Overrides */
 @media (max-width: 768px) {
     .testimonials-section {
         padding: 50px 0;
     }
     
-    .testimonials-slider-container {
-        height: 310px;
-        position: relative;
-        overflow: hidden;
-        margin-top: 15px;
-    }
-    
-    .testimonials-track {
-        display: block !important;
-        position: relative;
-        height: 270px;
-        width: 100%;
-    }
-    
-    .testimonial-card {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 255px !important;
-        margin: 0 !important;
-        z-index: 1;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(30px) scale(0.95);
-        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, visibility 0.4s ease !important;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
-        pointer-events: none;
-    }
-    
-    .testimonial-card.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0) scale(1);
-        z-index: 10;
-        pointer-events: auto;
-    }
-    
-    .testimonial-card.prev {
-        opacity: 0;
-        visibility: visible;
-        transform: translateY(-80px) rotate(-3deg);
-        z-index: 5;
-    }
-    
-    .testimonial-card.next {
-        opacity: 0.4;
-        visibility: visible;
-        transform: translateY(16px) scale(0.94);
-        z-index: 2;
+    .testimonial-box {
+        width: 85%;
+        padding: 20px;
     }
 
-    .testimonial-card.next-2 {
-        opacity: 0.15;
-        visibility: visible;
-        transform: translateY(32px) scale(0.88);
-        z-index: 1;
-    }
-    
     .testimonial-text {
-        font-size: 0.9rem !important;
-        line-height: 1.55 !important;
-        margin-bottom: 16px !important;
+        font-size: 0.95rem;
+        margin-bottom: 16px;
     }
-    
-    .testimonials-dots {
+}
+
+/* ==========================================================================
+   DESKTOP SAFETY & MOBILE HOMEPAGE UI OVERRIDES
+   ========================================================================== */
+
+/* ── Desktop Default States (Hidden on Desktop) ── */
+.mobile-header-actions {
+    display: none !important;
+}
+.mobile-hero-banner-wrap {
+    display: none !important;
+}
+.mobile-dynamic-hero-title {
+    display: none !important;
+}
+.desktop-hero-title {
+    display: block !important;
+}
+.mobile-top-brands-section {
+    display: none !important;
+}
+
+/* ── Mobile Breakpoint Overrides (max-width: 768px) ── */
+@media (max-width: 768px) {
+    /* 1. Mobile Header: Logo Left | Search & Profile Icons Right */
+    .top-header {
+        height: 60px !important;
+    }
+    .header-content {
         display: flex !important;
-        justify-content: center;
-        gap: 8px;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 20px;
-        align-items: center;
-        z-index: 20;
+        justify-content: space-between !important;
+        align-items: center !important;
+        height: 60px !important;
+        padding: 0 16px !important;
+        width: 100% !important;
     }
-    
-    .testimonials-dots .dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #E5E7EB;
-        cursor: pointer;
-        transition: background 0.3s ease, transform 0.3s ease;
+    .header-logo-img {
+        height: 48px !important;
+        max-height: 48px !important;
+        width: auto !important;
+        object-fit: contain !important;
     }
-    
-    .testimonials-dots .dot.active {
-        background: var(--primary);
-        transform: scale(1.25);
+    .user-controls {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        margin-left: auto !important;
     }
+    .search-container,
+    .location-btn,
+    .profile-container,
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+    .mobile-header-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        margin-left: auto !important;
+    }
+    .mobile-header-action-btn {
+        width: 40px !important;
+        height: 40px !important;
+        background: transparent !important;
+        color: #6A0DAD !important;
+        border: none !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.25rem !important;
+        cursor: pointer !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        outline: none !important;
+        transition: transform 0.2s ease, opacity 0.2s ease !important;
+    }
+    .mobile-header-action-btn:active {
+        transform: scale(0.9) !important;
+        opacity: 0.7 !important;
+        background: transparent !important;
+    }
+
+    /* 2. Hero Section Mobile Flow & Aspect-Fitted Banner */
+    .mobile-hero-banner-wrap {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 0 16px 0 !important;
+        border: none !important;
+    }
+    .mobile-hero-banner-wrap .hero-banner-carousel {
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        outline: none !important;
+        padding: 0 !important;
+        border-radius: 14px !important;
+        position: relative !important;
+    }
+    .mobile-hero-banner-wrap .banner-track-wrapper {
+        border-radius: 14px !important;
+        overflow: hidden !important;
+        box-shadow: none !important;
+        border: none !important;
+        outline: none !important;
+    }
+    .mobile-hero-banner-wrap .banner-slide {
+        background: transparent !important;
+        border: none !important;
+        outline: none !important;
+    }
+    .mobile-hero-banner-wrap .banner-arrow {
+        display: none !important;
+    }
+    .mobile-hero-banner-wrap .banner-pagination {
+        position: relative !important;
+        bottom: auto !important;
+        margin-top: 8px !important;
+        background: transparent !important;
+        padding: 0 !important;
+        border: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 5px !important;
+        box-shadow: none !important;
+        width: 100% !important;
+    }
+    .mobile-hero-banner-wrap .banner-dot {
+        width: 5px !important;
+        height: 5px !important;
+        border-radius: 50% !important;
+        background: #CBD5E1 !important;
+        border: none !important;
+        outline: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+    }
+    .mobile-hero-banner-wrap .banner-dot.active {
+        width: 12px !important;
+        height: 5px !important;
+        border-radius: 3px !important;
+        background: var(--primary) !important;
+    }
+    .hero-banner-section {
+        display: none !important;
+    }
+    .banner-slide img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
+    }
+
+    /* 3. Dynamic Animated Hero Title (Zigzag Motion) */
+    .desktop-hero-title {
+        display: none !important;
+    }
+    .mobile-dynamic-hero-title {
+        display: block !important;
+        font-size: 1.85rem !important;
+        font-weight: 800 !important;
+        text-align: center !important;
+        color: var(--text-dark) !important;
+        margin: 14px 0 !important;
+        line-height: 1.25 !important;
+        font-family: 'Outfit', sans-serif !important;
+    }
+    .morph-wrap {
+        display: inline-block !important;
+        position: relative !important;
+        overflow: hidden !important;
+        vertical-align: bottom !important;
+        height: 1.2em !important;
+        line-height: 1.2em !important;
+    }
+    .morph-text {
+        display: inline-block !important;
+        color: var(--primary) !important;
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease !important;
+        will-change: transform, opacity !important;
+    }
+    /* Zigzag opposite directions: Word 1 slides DOWN, Word 2 slides UP */
+    #morph-your-on.morph-out {
+        transform: translateY(100%) !important;
+        opacity: 0 !important;
+    }
+    #morph-your-on.morph-in-start {
+        transform: translateY(-100%) !important;
+        opacity: 0 !important;
+    }
+    #morph-get-dzy.morph-out {
+        transform: translateY(-100%) !important;
+        opacity: 0 !important;
+    }
+    #morph-get-dzy.morph-in-start {
+        transform: translateY(100%) !important;
+        opacity: 0 !important;
+    }
+
+    /* 4. Mobile Top Selling Brands (2x3 Grid) */
+    .mobile-top-brands-section {
+        display: block !important;
+        margin-top: 32px !important;
+        margin-bottom: 32px !important;
+    }
+    .mobile-brands-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px !important;
+    }
+    .mobile-brand-card {
+        background: #FFFFFF !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 16px !important;
+        padding: 12px 10px !important;
+        height: 72px !important;
+        min-height: 72px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-decoration: none !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+        transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    }
+    .mobile-brand-card:active {
+        transform: scale(0.96) !important;
+    }
+    .mobile-brand-card img {
+        height: 48px !important;
+        max-height: 48px !important;
+        max-width: 84% !important;
+        width: auto !important;
+        object-fit: contain !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+    .mobile-brand-name {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: 0.78rem !important;
+        font-weight: 700 !important;
+        color: var(--text-dark) !important;
+    }
+    .mobile-brand-more {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+    }
+    .mobile-brand-more .mobile-brand-name {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: 0.9rem !important;
+        font-weight: 800 !important;
+        color: var(--primary) !important;
+        letter-spacing: 0.05em !important;
+    }
+    .mobile-brand-more .more-icon {
+        font-size: 0.95rem !important;
+        color: var(--primary) !important;
+        transition: transform 0.2s ease !important;
+    }
+    .mobile-brand-more:active .more-icon {
+        transform: translateX(4px) !important;
+    }
+}
+
+/* ==========================================================================
+   EXPLORE SECTION (2 Cards per Row)
+   ========================================================================== */
+.explore-section {
+    margin-top: 28px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    width: 100%;
+}
+
+.explore-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.explore-img-wrap {
+    width: 100%;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.explore-img-wrap img {
+    height: 96px;
+    max-height: 96px;
+    max-width: 88%;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.08));
+}
+
+.explore-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.explore-card-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin: 0 0 6px 0;
+    line-height: 1.25;
+}
+
+.explore-card-price {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 0.85rem !important;
+    font-weight: 800 !important;
+    color: #16A34A !important;
+    background: transparent !important;
+    padding: 0 !important;
+    display: inline-block !important;
 }
 
 

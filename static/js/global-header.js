@@ -88,7 +88,17 @@
                         </div>
                     </div>
 
-                    <!-- Mobile Menu Icon -->
+                    <!-- Mobile Header Actions: Search Icon + Profile Icon -->
+                    <div class="mobile-header-actions">
+                        <button class="mobile-header-action-btn" id="mobile-header-search-btn" onclick="triggerMobileSearchFocus()" aria-label="Search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                        <button class="mobile-header-action-btn" id="mobile-header-profile-btn" onclick="toggleMobileNav()" aria-label="Profile">
+                            <i class="fa-solid fa-user"></i>
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Icon (Drawer Trigger) -->
                     <div class="mobile-menu-toggle" id="mobile-nav-toggle">
                         <i class="fa-solid fa-bars"></i>
                     </div>
@@ -368,5 +378,14 @@
                 }
             });
         });
+
+        // Trigger search input focus on mobile
+        window.triggerMobileSearchFocus = function() {
+            const mobileSearch = document.getElementById('mobile-global-search-input') || document.getElementById('global-search-input');
+            if (mobileSearch) {
+                mobileSearch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                setTimeout(() => mobileSearch.focus(), 300);
+            }
+        };
     });
 })();
